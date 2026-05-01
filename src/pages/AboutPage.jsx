@@ -5,9 +5,9 @@ const AboutPage = () => {
     return (
         <>
             {/* ═══════════════════════════════════════
-          Page Header – "About Abdulla Capital"
-          (subtle gold lines above and below)
-          ═══════════════════════════════════════ */}
+              Page Header – "About Abdulla Capital"
+              (subtle gold lines above and below)
+              ═══════════════════════════════════════ */}
             <div
                 style={{
                     background: 'var(--navy)',
@@ -41,9 +41,9 @@ const AboutPage = () => {
                     position: 'relative',
                 }}
             >
-        <span className="overline" style={{ color: 'var(--gold-light)' }}>
-          The Firm
-        </span>
+                <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                    The Firm
+                </span>
                 <h1 className="h1-display on-dark" style={{ maxWidth: '600px' }}>
                     Founded on Belief.
                     <br />
@@ -114,7 +114,8 @@ const AboutPage = () => {
                     This positioning gives our clients a rare advantage: access not just to our advisory services, but to a network of affiliated principals, investment relationships, and market intelligence that most standalone firms cannot offer.
                 </p>
 
-                <div style={{ display: 'flex', gap: '24px', marginTop: '36px', flexWrap: 'wrap' }}>
+                {/* 4‑column grid – mobile‑responsive via layout-4col */}
+                <div className="layout-4col" style={{ marginTop: '36px' }}>
                     {[
                         { icon: '🏢', title: 'Real Estate', desc: 'Trophy assets across primary markets' },
                         { icon: '⚽', title: 'Sports Assets', desc: 'Clubs, academies, and sports infrastructure' },
@@ -125,9 +126,8 @@ const AboutPage = () => {
                             background: 'rgba(255,255,255,0.06)',
                             border: '1px solid rgba(184,152,106,0.2)',
                             padding: '20px 24px',
-                            flex: 1,
-                            minWidth: '180px',
                             borderTop: '2px solid var(--gold)',
+                            textAlign: 'center',
                         }}>
                             <div style={{ fontSize: '24px', marginBottom: '8px' }}>{item.icon}</div>
                             <div style={{
@@ -148,8 +148,8 @@ const AboutPage = () => {
                     <div className="wf-image-box" style={{ minHeight: '500px', background: '#1a2535' }}>
                         <span className="icon" style={{ fontSize: '60px', opacity: 0.3 }}>👤</span>
                         <span style={{ color: 'rgba(255,255,255,0.6)' }}>
-              Formal portrait of Chairman.<br />High resolution, aspirational.<br />Dark or neutral studio background.
-            </span>
+                            Formal portrait of Chairman.<br />High resolution, aspirational.<br />Dark or neutral studio background.
+                        </span>
                     </div>
                     <div className="text-block" style={{ padding: '50px 40px' }}>
                         <span className="overline">Leadership</span>
