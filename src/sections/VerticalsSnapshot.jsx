@@ -29,29 +29,22 @@ const VerticalsSnapshot = () => (
     <section className="dark-band" style={{ padding: '60px 30px' }}>
         {/* Section heading */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-      <span className="overline" style={{ color: 'var(--gold-light)' }}>
-        What We Do
-      </span>
+            <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                What We Do
+            </span>
             <h2 className="h2-section" style={{ color: 'var(--white)' }}>
                 Four Disciplines. One Philosophy.
             </h2>
         </div>
 
-        {/* Four cards */}
-        <div
-            style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: 0,
-            }}
-        >
+        {/* Four cards – responsive grid via layout-4col */}
+        <div className="layout-4col">
             {cards.map((card, idx) => (
                 <div
                     key={idx}
                     style={{
                         background: 'rgba(255,255,255,0.03)',
                         borderTop: '3px solid var(--gold)',
-                        borderRight: idx < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                         padding: '2.5rem 1.5rem',
                         textAlign: 'center',
                         display: 'flex',
