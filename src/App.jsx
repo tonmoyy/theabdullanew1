@@ -14,6 +14,10 @@ import VerticalsPage from './pages/VerticalsPage';
 import PhilosophyPage from './pages/PhilosophyPage';
 import EngagementPage from './pages/EngagementPage';
 import ContactPage from './pages/ContactPage';
+import GovernancePage from "@/pages/GovernancePage.jsx";
+import DisclaimerPage from "@/pages/DisclaimerPage.jsx";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage.jsx";
+import CookiePolicyPage from "@/pages/CookiePolicyPage.jsx";
 
 function App() {
     return (
@@ -30,6 +34,10 @@ function App() {
                     <Route path="/philosophy" element={<PhilosophyPage />} />
                     <Route path="/engagement" element={<EngagementPage />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/governance" element={<GovernancePage />} />
+                    <Route path="/disclaimer" element={<DisclaimerPage />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                    <Route path="/cookie-policy" element={<CookiePolicyPage />} />
                 </Routes>
                 <Footer />
             </div>
