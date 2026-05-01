@@ -377,7 +377,7 @@ body {
 
 .nav-cta {
     background: var(--gold);
-    color: var(--navy);
+    color: var(--wp--preset--color--creamwhite);
     padding: 9px 22px;
     font-size: 13px;
     font-weight: 700;
