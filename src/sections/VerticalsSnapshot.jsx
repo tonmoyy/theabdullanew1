@@ -27,6 +27,25 @@ const cards = [
 
 const VerticalsSnapshot = () => (
     <section className="dark-band" style={{ padding: '60px 30px' }}>
+        {/* Scoped responsive grid rules */}
+        <style>{`
+          .vertical-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+          }
+          @media (max-width: 768px) {
+            .vertical-cards-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .vertical-cards-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+        `}</style>
+
         {/* Section heading */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="overline" style={{ color: 'var(--gold-light)' }}>
@@ -37,8 +56,8 @@ const VerticalsSnapshot = () => (
             </h2>
         </div>
 
-        {/* Four cards – responsive grid via layout-4col */}
-        <div className="layout-4col">
+        {/* Four cards – now using custom responsive grid */}
+        <div className="vertical-cards-grid">
             {cards.map((card, idx) => (
                 <div
                     key={idx}

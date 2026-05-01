@@ -2,40 +2,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Global CSS – contains all wireframe styles (colours, typography, layout, components)
 import './styles/AbdullaWireframe.css';
 
-// Global navigation bar (appears on every page)
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer';
 
-// Page components
-import Homepage from "@/sections/HomePage.jsx";
+import Homepage from './sections/HomePage';
 import AboutPage from './pages/AboutPage';
-import Footer from "@/components/Footer.jsx";
-import ScrollToTop from "@/components/ScrollToTop.jsx";
+import VerticalsPage from './pages/VerticalsPage';
+import PhilosophyPage from './pages/PhilosophyPage';
+import EngagementPage from './pages/EngagementPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
     return (
         <Router>
-            {/* Fixed / sticky navbar */}
             <ScrollToTop />
             <Navbar />
 
-            {/* Main content wrapper – adds top padding to avoid navbar overlap (if needed) */}
             <div className="main-wrapper" style={{ paddingTop: '70px' }}>
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/about" element={<AboutPage />} />
-
-                    {/* Future routes – uncomment and build as needed */}
-                    {/*
-          <Route path="/verticals" element={<VerticalsPage />} />
-          <Route path="/philosophy" element={<PhilosophyPage />} />
-          <Route path="/engagement" element={<EngagementPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          */}
+                    <Route path="/verticals" element={<VerticalsPage />} />
+                    <Route path="/verticals/:section" element={<VerticalsPage />} />
+                    <Route path="/philosophy" element={<PhilosophyPage />} />
+                    <Route path="/engagement" element={<EngagementPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
                 </Routes>
-                <AboutPage />
                 <Footer />
             </div>
         </Router>

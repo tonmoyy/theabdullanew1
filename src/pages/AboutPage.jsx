@@ -33,28 +33,67 @@ const AboutPage = () => {
                 </h2>
             </div>
 
-            {/* ═══ Hero – Interior ═══ */}
+            {/* ═══ Hero – Interior (50vh) ═══ */}
             <section
                 style={{
-                    background: 'var(--navy)',
-                    padding: '60px 40px',
                     position: 'relative',
+                    height: '50vh',
+                    minHeight: '320px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
                 }}
             >
-                <span className="overline" style={{ color: 'var(--gold-light)' }}>
-                    The Firm
-                </span>
-                <h1 className="h1-display on-dark" style={{ maxWidth: '600px' }}>
-                    Founded on Belief.
-                    <br />
-                    <em>Built on Discipline.</em>
-                </h1>
-                <div style={{ width: '50px', height: '2px', background: 'var(--gold)', marginTop: '20px' }}></div>
+                {/* Background image – modern architectural / Gulf cityscape */}
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200"
+                    alt="Modern glass architecture"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Dark overlay 50% */}
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                        zIndex: 2,
+                    }}
+                />
+
+                {/* Content – left-aligned, above overlay */}
+                <div
+                    style={{
+                        position: 'relative',
+                        zIndex: 3,
+                        padding: '60px 40px',
+                    }}
+                >
+                    <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                        The Firm
+                    </span>
+                    <h1 className="h1-display on-dark" style={{ maxWidth: '600px' }}>
+                        Founded on Belief.
+                        <br />
+                        <em>Built on Discipline.</em>
+                    </h1>
+                    <div style={{ width: '50px', height: '2px', background: 'var(--gold)', marginTop: '20px' }}></div>
+                </div>
             </section>
 
             {/* ═══ Opening Statement – Two‑column ═══ */}
             <section style={{ padding: '0' }}>
                 <div className="layout-split" style={{ gridTemplateColumns: '3fr 2fr', border: '1px solid var(--light-gray)' }}>
+                    {/* Left text block (60%) */}
                     <div className="text-block" style={{ padding: '50px 40px' }}>
                         <span className="overline">Who We Are</span>
                         <h2 className="h2-section">
@@ -67,6 +106,8 @@ const AboutPage = () => {
                             We bring together deep sector expertise, a global investor network, and a commitment to long‑term value, offering clients not just a service, but a genuine strategic partnership.
                         </p>
                     </div>
+
+                    {/* Right pull‑quote – decorative element (40%) */}
                     <div style={{
                         background: 'var(--navy)',
                         padding: '40px 30px',

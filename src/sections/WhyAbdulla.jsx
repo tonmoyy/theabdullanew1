@@ -23,7 +23,7 @@ const differentiators = [
 const WhyAbdulla = () => (
     <section className="cream-band" style={{ padding: '60px 30px' }}>
         <div className="layout-split" style={{ gridTemplateColumns: '2fr 3fr', gap: '60px' }}>
-            {/* Left column – heading */}
+            {/* Left column – heading (40% width) */}
             <div style={{ padding: '20px 0' }}>
                 <span className="overline">Our Edge</span>
                 <h2 className="h2-section" style={{ fontSize: '38px', lineHeight: 1.15 }}>
@@ -36,7 +36,7 @@ const WhyAbdulla = () => (
                 </p>
             </div>
 
-            {/* Right column – differentiator items */}
+            {/* Right column – differentiator items (60% width) */}
             <div>
                 {differentiators.map((item, idx) => (
                     <div className="philosophy-item" key={idx}>

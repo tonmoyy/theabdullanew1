@@ -37,7 +37,6 @@ const Navbar = () => {
         left: 0,
         right: 0,
         zIndex: 1000,
-        // ✅ Always navy — no more transparent flicker at page top
         background: 'var(--navy)',
         transition: 'background-color 0.4s',
         border: 'none',
@@ -65,14 +64,14 @@ const Navbar = () => {
                     ABDULLA <span>CAPITAL</span>
                 </Link>
 
-                {/* Desktop links — 200px gap after logo, uniform gap between items */}
+                {/* Desktop links */}
                 <div
                     className="nav-links"
                     style={{
                         display: 'flex',
                         alignItems: 'center',
-                        marginLeft: '200px',   /* ✅ 200px gap after Abdulla Capital */
-                        gap: '50px',           /* ✅ uniform gap between all nav items */
+                        marginLeft: '200px',
+                        gap: '50px',
                     }}
                 >
                     <Link to="/about">About</Link>
@@ -172,9 +171,16 @@ const Navbar = () => {
                     <Link to="/engagement">Engagement</Link>
                 </div>
 
-                {/* CTA button – pushed to right */}
+                {/* CTA button – pushed to right, white "flamed" text */}
                 <div style={{ marginLeft: 'auto' }}>
-                    <Link to="/contact" className="nav-cta">
+                    <Link
+                        to="/contact"
+                        className="nav-cta"
+                        style={{
+                            color: '#ffffff',
+                            textShadow: '0 0 8px rgba(255,200,100,0.6), 0 0 16px rgba(255,180,50,0.4)', // flame-like glow
+                        }}
+                    >
                         Contact Us
                     </Link>
                 </div>
@@ -204,7 +210,16 @@ const Navbar = () => {
                         <li><Link to="/philosophy" onClick={toggleMobile}>Philosophy</Link></li>
                         <li><Link to="/engagement" onClick={toggleMobile}>Engagement</Link></li>
                         <li>
-                            <Link to="/contact" onClick={toggleMobile} className="nav-cta" style={{ display: 'inline-block' }}>
+                            <Link
+                                to="/contact"
+                                onClick={toggleMobile}
+                                className="nav-cta"
+                                style={{
+                                    display: 'inline-block',
+                                    color: '#ffffff',
+                                    textShadow: '0 0 8px rgba(255,200,100,0.6), 0 0 16px rgba(255,180,50,0.4)',
+                                }}
+                            >
                                 Contact Us
                             </Link>
                         </li>
