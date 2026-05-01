@@ -9,7 +9,7 @@ import './styles/AbdullaWireframe.css';
 import Navbar from './components/Navbar';
 
 // Page components
-import Homepage from './sections/Homepage';
+import Homepage from "@/sections/HomePage.jsx";
 import AboutPage from './pages/AboutPage';
 import Footer from "@/components/Footer.jsx";
 
