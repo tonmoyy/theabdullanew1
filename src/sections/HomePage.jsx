@@ -9,29 +9,30 @@ import HomeCTA from './HomeCTA';
 const Homepage = () => {
     return (
         <>
-            {/* ═══ Title Bar ═══ */}
+            {/* ═══ Title Bar (3D Banner) ═══ */}
             <div
                 style={{
                     backgroundColor: 'var(--navy)',
-                    paddingTop: '80px',
+                    paddingTop: '65px',                 // ← raised higher
                     paddingBottom: 0,
                     marginBottom: 0,
                     lineHeight: 0,
                     border: 'none',
                     outline: 'none',
-                    boxShadow: 'none',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2)',  // 3D lift
+                    borderBottom: '3px solid var(--gold)',                               // gold underline
                 }}
             >
                 <div
                     style={{
                         width: '100%',
-                        padding: '14px 5rem 14px',
+                        padding: '14px 2rem 14px',       // ← text moved left (was 5rem)
                         lineHeight: 'normal',
                         display: 'block',
                         margin: 0,
                         border: 'none',
                         boxShadow: 'none',
-                        backgroundColor: 'var(--navy)',
+                        backgroundColor: 'transparent',   // inherits navy from parent
                     }}
                 >
                     <span
@@ -39,6 +40,7 @@ const Homepage = () => {
                             color: '#ffffff',
                             fontSize: '1.5rem',
                             fontWeight: 600,
+                            fontFamily: "'Cormorant Garamond', serif",
                             letterSpacing: '0.03em',
                         }}
                     >
@@ -127,8 +129,8 @@ const Homepage = () => {
                         className="body-copy light"
                         style={{ maxWidth: '560px', margin: '0 auto 30px', fontSize: '1.125rem' }}
                     >
-                        Abdulla Capital is a multi‐vertical private investment and advisory firm,
-                        built on disciplined capital, long‐term thinking, and a deep understanding
+                        Abdulla Capital is a multi‑vertical private investment and advisory firm,
+                        built on disciplined capital, long‑term thinking, and a deep understanding
                         of the sectors we serve.
                     </p>
 

@@ -12,11 +12,13 @@ import Navbar from './components/Navbar';
 import Homepage from "@/sections/HomePage.jsx";
 import AboutPage from './pages/AboutPage';
 import Footer from "@/components/Footer.jsx";
+import ScrollToTop from "@/components/ScrollToTop.jsx";
 
 function App() {
     return (
         <Router>
             {/* Fixed / sticky navbar */}
+            <ScrollToTop />
             <Navbar />
 
             {/* Main content wrapper – adds top padding to avoid navbar overlap (if needed) */}

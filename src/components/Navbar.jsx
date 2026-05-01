@@ -57,7 +57,11 @@ const Navbar = () => {
         <>
             {/* ═══ WIREFRAME NAV BAR ═══ */}
             <nav className="nav-bar" style={navStyle}>
-                <Link to="/" className="nav-logo">
+                <Link
+                    to="/"
+                    className="nav-logo"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                     ABDULLA <span>CAPITAL</span>
                 </Link>
 
