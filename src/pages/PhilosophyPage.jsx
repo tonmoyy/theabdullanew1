@@ -22,20 +22,20 @@ const PhilosophyPage = () => {
     return (
         <>
             {/* Page Header (unchanged) */}
-            <div style={{
-                background: 'var(--navy)',
-                color: 'var(--white)',
-                padding: '20px 40px 20px 20px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                borderTop: '1px solid rgba(184,152,106,0.15)',
-                borderBottom: '1px solid rgba(184,152,106,0.15)',
-            }}>
-                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', fontWeight: 400, letterSpacing: '0.04em', margin: 0 }}>
-                    Our Philosophy
-                </h2>
-            </div>
+            {/*<div style={{*/}
+            {/*    background: 'var(--navy)',*/}
+            {/*    color: 'var(--white)',*/}
+            {/*    padding: '20px 40px 20px 20px',*/}
+            {/*    display: 'flex',*/}
+            {/*    alignItems: 'center',*/}
+            {/*    justifyContent: 'flex-start',*/}
+            {/*    borderTop: '1px solid rgba(184,152,106,0.15)',*/}
+            {/*    borderBottom: '1px solid rgba(184,152,106,0.15)',*/}
+            {/*}}>*/}
+            {/*    <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', fontWeight: 400, letterSpacing: '0.04em', margin: 0 }}>*/}
+            {/*        Our Philosophy*/}
+            {/*    </h2>*/}
+            {/*</div>*/}
 
             {/* Hero – Interior */}
             <section style={{ background: 'var(--navy)', padding: '60px 40px', position: 'relative' }}>

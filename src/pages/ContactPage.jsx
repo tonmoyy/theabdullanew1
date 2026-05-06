@@ -66,30 +66,7 @@ const ContactPage = () => {
     return (
         <>
             {/* Page Header – "Contact" */}
-            <div
-                style={{
-                    background: 'var(--navy)',
-                    color: 'var(--white)',
-                    padding: '20px 40px 20px 20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
-                    borderTop: '1px solid rgba(184,152,106,0.15)',
-                    borderBottom: '1px solid rgba(184,152,106,0.15)',
-                }}
-            >
-                <h2
-                    style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: '24px',
-                        fontWeight: 400,
-                        letterSpacing: '0.04em',
-                        margin: 0,
-                    }}
-                >
-                    Contact
-                </h2>
-            </div>
+
 
             {/* Hero – Minimal */}
             <section
