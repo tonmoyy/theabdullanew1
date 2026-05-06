@@ -1,6 +1,8 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+// Import the SVG logo
+import logo from '../assets/svg/Logo-AC-BG-Rmvd.svg';
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -40,7 +42,6 @@ const Navbar = () => {
         background: 'var(--navy)',
         transition: 'background-color 0.4s',
         border: 'none',
-        borderBottom: 'none',
         boxShadow: 'none',
         outline: 'none',
     };
@@ -54,17 +55,21 @@ const Navbar = () => {
 
     return (
         <>
-            {/* ═══ WIREFRAME NAV BAR ═══ */}
             <nav className="nav-bar" style={navStyle}>
+                {/* Logo image instead of text */}
                 <Link
                     to="/"
                     className="nav-logo"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    style={{ display: 'flex', alignItems: 'center' }}
                 >
-                    ABDULLA <span>CAPITAL</span>
+                    <img
+                        src={logo}
+                        alt="Abdulla Capital Logo"
+                        style={{ height: '40px', width: 'auto', display: 'block' }}
+                    />
                 </Link>
 
-                {/* Desktop links */}
                 <div
                     className="nav-links"
                     style={{
@@ -76,7 +81,6 @@ const Navbar = () => {
                 >
                     <Link to="/about">About</Link>
 
-                    {/* ── Verticals dropdown ── */}
                     <div
                         ref={dropdownRef}
                         style={{ position: 'relative' }}
@@ -171,21 +175,19 @@ const Navbar = () => {
                     <Link to="/engagement">Engagement</Link>
                 </div>
 
-                {/* CTA button – pushed to right, white "flamed" text */}
                 <div style={{ marginLeft: 'auto' }}>
                     <Link
                         to="/contact"
                         className="nav-cta"
                         style={{
                             color: '#ffffff',
-                            textShadow: '0 0 8px rgba(255,200,100,0.6), 0 0 16px rgba(255,180,50,0.4)', // flame-like glow
+                            textShadow: '0 0 8px rgba(255,200,100,0.6), 0 0 16px rgba(255,180,50,0.4)',
                         }}
                     >
                         Contact Us
                     </Link>
                 </div>
 
-                {/* Hamburger (visible on mobile only) */}
                 <button
                     className="ta-header__open-menu"
                     onClick={toggleMobile}
@@ -194,9 +196,23 @@ const Navbar = () => {
                 >
                     <span></span>
                 </button>
+
+                {/* Golden line that vanishes on scroll */}
+                <div
+                    style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '3px',
+                        background: 'var(--gold)',
+                        transition: 'opacity 0.3s ease',
+                        opacity: scrolled ? 0 : 1,
+                        pointerEvents: 'none',
+                    }}
+                />
             </nav>
 
-            {/* ═══ MOBILE OVERLAY ═══ */}
             <div className={`ta-mobile-header ${mobileOpen ? 'open' : ''}`}>
                 <div className="ta-container-wide">
                     <nav className="ta-mobile-header__menu">

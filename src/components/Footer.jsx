@@ -1,6 +1,8 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+// Import the same SVG logo used in Navbar
+import logo from '../assets/svg/Logo-AC-BG-Rmvd.svg';
 
 const Footer = () => {
     return (
@@ -22,8 +24,12 @@ const Footer = () => {
             <footer className="footer-strip">
                 {/* Column 1 – Logo + tagline + email */}
                 <div>
-                    <Link to="/" className="nav-logo" style={{ fontSize: '22px' }}>
-                        ABDULLA <span>CAPITAL</span>
+                    <Link to="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img
+                            src={logo}
+                            alt="Abdulla Capital Logo"
+                            style={{ height: '32px', width: 'auto', display: 'block' }}
+                        />
                     </Link>
                     <p style={{
                         fontSize: '12px',

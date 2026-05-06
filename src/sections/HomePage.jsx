@@ -7,55 +7,18 @@ import WhyAbdulla from './WhyAbdulla';
 import HomeCTA from './HomeCTA';
 
 const Homepage = () => {
-    return (
-        <>
-            {/* ═══ Title Bar (3D Banner) ═══ */}
-            <div
-                style={{
-                    backgroundColor: 'var(--navy)',
-                    paddingTop: '65px',                 // ← raised higher
-                    paddingBottom: 0,
-                    marginBottom: 0,
-                    lineHeight: 0,
-                    border: 'none',
-                    outline: 'none',
-                    boxShadow: '0 8px 20px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2)',  // 3D lift
-                    borderBottom: '3px solid var(--gold)',                               // gold underline
-                }}
-            >
-                <div
-                    style={{
-                        width: '100%',
-                        padding: '14px 2rem 14px',       // ← text moved left (was 5rem)
-                        lineHeight: 'normal',
-                        display: 'block',
-                        margin: 0,
-                        border: 'none',
-                        boxShadow: 'none',
-                        backgroundColor: 'transparent',   // inherits navy from parent
-                    }}
-                >
-                    <span
-                        style={{
-                            color: '#ffffff',
-                            fontSize: '1.5rem',
-                            fontWeight: 600,
-                            fontFamily: "'Cormorant Garamond', serif",
-                            letterSpacing: '0.03em',
-                        }}
-                    >
-                        Home
-                    </span>
-                </div>
-            </div>
+    // Navbar content height (without the golden line, because the line is absolutely positioned)
+    const navbarHeight = 5; // Adjust to match your navbar's actual content height
 
-            {/* ═══ Hero Section ═══ */}
+    return (
+        <div style={{ paddingTop: `${navbarHeight}px`, backgroundColor: 'var(--navy)' }}>
+            {/* Hero section starts directly below navbar */}
             <section
                 id="ta-home-page-hero-block"
                 className="ta-home-page-hero align-full ta-section-element"
                 style={{
                     position: 'relative',
-                    minHeight: '100vh',
+                    minHeight: `calc(100vh - ${navbarHeight}px)`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -87,7 +50,6 @@ const Homepage = () => {
                             display: 'block',
                         }}
                     />
-                    {/* 55% dark overlay */}
                     <div
                         style={{
                             position: 'absolute',
@@ -145,12 +107,12 @@ const Homepage = () => {
                 </div>
             </section>
 
-            {/* Page sections */}
+            {/* Remaining sections */}
             <HomeIntro />
             <VerticalsSnapshot />
             <WhyAbdulla />
             <HomeCTA />
-        </>
+        </div>
     );
 };
 

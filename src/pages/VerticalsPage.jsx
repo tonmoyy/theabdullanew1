@@ -88,6 +88,16 @@ const verticals = [
     }
 ];
 
+// Modern image container style
+const imageContainerStyle = {
+    minHeight: '380px',
+    position: 'relative',
+    overflow: 'hidden',
+    borderRadius: '12px',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+    border: '1px solid rgba(184,152,106,0.25)',
+};
+
 const VerticalsPage = () => {
     const { section } = useParams();
     const [activeTab, setActiveTab] = useState(
@@ -194,13 +204,14 @@ const VerticalsPage = () => {
                 ))}
             </div>
 
-            {/* Vertical Content – changes based on active tab */}
+            {/* Vertical Content */}
             <div>
                 {/* Private Equity */}
                 {activeTab === 'private-equity' && (
                     <>
                         <section style={{ padding: 0 }}>
                             <div className="layout-split" style={{ gridTemplateColumns: '3fr 2fr', border: '1px solid var(--light-gray)' }}>
+                                {/* Left column – text block */}
                                 <div className="text-block" style={{ padding: '50px 40px' }}>
                                     <span className="tag">01 — Private Equity</span>
                                     <h2 className="h2-section">{currentVertical.tagline}</h2>
@@ -213,14 +224,26 @@ const VerticalsPage = () => {
                                             <span key={s} className="inline-tag">{s}</span>
                                         ))}
                                     </div>
+
+                                    {/* Who We Partner With – moved inside left column */}
+                                    <div style={{ marginTop: '32px', paddingTop: '16px', borderTop: '1px solid rgba(184,152,106,0.25)' }}>
+                                        <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--navy)', marginBottom: '12px' }}>Who We Partner With</div>
+                                        <p className="body-copy" style={{ marginBottom: 0 }}>{currentVertical.partnerText}</p>
+                                    </div>
                                 </div>
-                                <div className="wf-image-box" style={{ minHeight: '380px' }}>
-                                    <span className="icon">📊</span>
-                                    <span>Abstract finance visual, data screens, or city skyline.</span>
+
+                                {/* Right column – image */}
+                                <div className="wf-image-box" style={imageContainerStyle}>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                                        alt="Abstract finance visualization with city skyline in background"
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+                                    />
                                 </div>
                             </div>
                         </section>
 
+                        {/* Approach cards (3-column) */}
                         <section className="cream-band" style={{ padding: '30px' }}>
                             <div className="layout-3col">
                                 {currentVertical.approachCards.map((card, i) => (
@@ -234,11 +257,6 @@ const VerticalsPage = () => {
                                 ))}
                             </div>
                         </section>
-
-                        <div style={{ padding: '24px 30px', background: '#fff', borderTop: '1px solid var(--light-gray)' }}>
-                            <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--navy)', marginBottom: '12px' }}>Who We Partner With</div>
-                            <p className="body-copy">{currentVertical.partnerText}</p>
-                        </div>
                     </>
                 )}
 
@@ -277,9 +295,12 @@ const VerticalsPage = () => {
                 {activeTab === 'family-office' && (
                     <section>
                         <div className="layout-split img-left" style={{ background: 'var(--cream)' }}>
-                            <div className="wf-image-box" style={{ minHeight: '420px', background: '#2a3545' }}>
-                                <span className="icon" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '50px' }}>🏛️</span>
-                                <span style={{ color: 'rgba(255,255,255,0.55)' }}>Aspirational interior: library, estate, or family generational setting.</span>
+                            <div className="wf-image-box" style={{ ...imageContainerStyle, minHeight: '420px' }}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80"
+                                    alt="Elegant family office meeting room with classic wooden details"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+                                />
                             </div>
                             <div className="text-block" style={{ padding: '50px 40px' }}>
                                 <span className="tag">03 — Family Office</span>
@@ -321,9 +342,12 @@ const VerticalsPage = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="wf-image-box" style={{ minHeight: '320px', background: '#1a2535' }}>
-                                    <span className="icon" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '44px' }}>💎</span>
-                                    <span style={{ color: 'rgba(255,255,255,0.55)' }}>Luxury asset photography: watch, fine art, or classic car. Dark, moody, premium tone.</span>
+                                <div className="wf-image-box" style={{ ...imageContainerStyle, minHeight: '320px' }}>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=800&q=80"
+                                        alt="Luxury watch movement detail – craftsmanship and precision"
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+                                    />
                                 </div>
                             </div>
                         </section>
