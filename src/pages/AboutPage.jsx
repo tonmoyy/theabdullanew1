@@ -1,5 +1,6 @@
 // src/pages/AboutPage.jsx
 import React from 'react';
+import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
 
 const AboutPage = () => {
     return (
@@ -208,7 +209,7 @@ const AboutPage = () => {
                         }}
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
+                            src={GlobalPresence}
                             alt="Polished stylised world map with glowing golden network connections"
                             style={{
                                 position: 'absolute',
