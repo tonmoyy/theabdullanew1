@@ -33,26 +33,37 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!validateForm()) return;
+        console.log('1. Form submitted, validating...');
+        if (!validateForm()) {
+            console.log('2. Validation failed. Form not sent.');
+            return;
+        }
+
+        console.log('3. Validation passed. Data:', formData);
 
         setIsSubmitting(true);
         try {
+            console.log('4. Sending fetch to /.netlify/functions/contact');
             const response = await fetch('/.netlify/functions/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
 
+            console.log('5. Response status:', response.status);
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                const errorText = await response.text();
+                console.error('6. Server error response:', errorText);
+                throw new Error(`Server responded with ${response.status}: ${errorText}`);
             }
 
+            console.log('7. Request successful!');
             setIsSubmitting(false);
             setIsSubmitted(true);
             setFormData({ name: '', company: '', email: '', message: '' });
             setTimeout(() => setIsSubmitted(false), 5000);
         } catch (error) {
-            console.error('Submission error:', error);
+            console.error('8. Fetch error:', error);
             setIsSubmitting(false);
             alert('Oops! Something went wrong. Please try again later.');
         }
