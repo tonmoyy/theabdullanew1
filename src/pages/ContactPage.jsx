@@ -14,11 +14,11 @@ const ContactPage = () => {
 
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);   // loading state
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        // Clear error when user types
         if (errors[name]) {
             setErrors(prev => ({ ...prev, [name]: '' }));
         }
@@ -39,16 +39,40 @@ const ContactPage = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validate()) return;
 
-        // Simulate form submission (replace with actual API call)
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
+        setIsSubmitting(true);
+        try {
+            // Map fields to what the Netlify function expects
+            const payload = {
+                name: formData.fullName,
+                email: formData.email,
+                company: formData.organisation || 'None',
+                message: `Subject: ${formData.subject}\n\n${formData.message}\n\nPreferred contact: ${formData.preferredContact}\nHeard via: ${formData.howHeard}`,
+            };
+
+            const response = await fetch('/.netlify/functions/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Server error: ${response.status} ${errorText}`);
+            }
+
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Submission failed:', error);
+            alert('Sorry, something went wrong. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
-    // Reset form for a new enquiry
     const handleReset = () => {
         setFormData({
             fullName: '',
@@ -65,9 +89,6 @@ const ContactPage = () => {
 
     return (
         <>
-            {/* Page Header – "Contact" */}
-
-
             {/* Hero – Minimal */}
             <section
                 style={{
@@ -76,9 +97,9 @@ const ContactPage = () => {
                     position: 'relative',
                 }}
             >
-        <span className="overline" style={{ color: 'var(--gold-light)' }}>
-          Contact
-        </span>
+                <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                    Contact
+                </span>
                 <h1 className="h1-display on-dark">We respond to every serious enquiry.</h1>
                 <p className="body-copy light" style={{ maxWidth: '500px', marginTop: '16px' }}>
                     Whether you are seeking advisory support, exploring an investment
@@ -270,8 +291,9 @@ const ContactPage = () => {
                                 </div>
 
                                 <div style={{ marginTop: '20px' }}>
-                                    <button type="submit" className="btn btn-primary" style={{ display: 'inline-block' }}>
-                                        Submit Enquiry
+                                    {/* Updated submit button */}
+                                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                                        {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
                                     </button>
                                 </div>
                                 <p
@@ -338,8 +360,8 @@ const ContactPage = () => {
                                 info@abdullacapital.com
                                 <br />
                                 <span style={{ color: 'var(--mid-gray)', fontSize: '11px' }}>
-                  [To be confirmed]
-                </span>
+                                    [To be confirmed]
+                                </span>
                             </div>
                         </div>
 
