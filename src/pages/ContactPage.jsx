@@ -45,19 +45,21 @@ const ContactPage = () => {
 
         setIsSubmitting(true);
         try {
-            // Map fields to what the Netlify function expects
             const payload = {
                 name: formData.fullName,
                 email: formData.email,
                 company: formData.organisation || 'None',
                 message: `Subject: ${formData.subject}\n\n${formData.message}\n\nPreferred contact: ${formData.preferredContact}\nHeard via: ${formData.howHeard}`,
             };
-            await fetch('/api/contact', {  // was '/.netlify/functions/contact'
+
+            // 1. Define the response variable by calling fetch
+            const response = await fetch('/.netlify/functions/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
             });
 
+            // 2. Check if the response was successful
             if (!response.ok) {
                 const errorText = await response.text();
                 throw new Error(`Server error: ${response.status} ${errorText}`);
