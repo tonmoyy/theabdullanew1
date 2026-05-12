@@ -1,0 +1,4 @@
+[build]
+  functions = "netlify/functions"
+  publish = "build"        # adjust if your build output is different
+  command = "npm run build"

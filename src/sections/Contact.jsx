@@ -36,13 +36,26 @@ const Contact = () => {
         if (!validateForm()) return;
 
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log('Form submitted:', formData);
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({ name: '', company: '', email: '', message: '' });
-        setTimeout(() => setIsSubmitted(false), 5000);
+        try {
+            const response = await fetch('/.netlify/functions/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            setIsSubmitting(false);
+            setIsSubmitted(true);
+            setFormData({ name: '', company: '', email: '', message: '' });
+            setTimeout(() => setIsSubmitted(false), 5000);
+        } catch (error) {
+            console.error('Submission error:', error);
+            setIsSubmitting(false);
+            alert('Oops! Something went wrong. Please try again later.');
+        }
     };
 
     return (
