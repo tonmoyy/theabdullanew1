@@ -52,8 +52,7 @@ const ContactPage = () => {
                 company: formData.organisation || 'None',
                 message: `Subject: ${formData.subject}\n\n${formData.message}\n\nPreferred contact: ${formData.preferredContact}\nHeard via: ${formData.howHeard}`,
             };
-
-            const response = await fetch('/.netlify/functions/contact', {
+            await fetch('/api/contact', {  // was '/.netlify/functions/contact'
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
