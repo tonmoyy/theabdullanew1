@@ -1,4 +1,9 @@
 [build]
-  functions = "netlify/functions"
-  publish = "build"        # adjust if your build output is different
   command = "npm run build"
+  publish = "build"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
