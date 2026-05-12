@@ -1,6 +1,10 @@
 // src/pages/VerticalsPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import PrivateEquity1 from '../assets/images/PrivateEquity-1.jpg';
+import VerticalsBG from '../assets/images/Verticals Page BG Resolution.jpg';
+import FamilyOffice from '../assets/images/Family Office Left Side Picture.jpg';
+import LuxuryFinance from '../assets/images/Luxury Finance Right Side Picture.jpg';
 
 const verticals = [
     {
@@ -133,15 +137,15 @@ const VerticalsPage = () => {
             {/* Hero – Interior with long‑exposure dark city shot */}
             <section style={{
                 position: 'relative',
-                height: '50vh',
-                minHeight: '320px',
+                width: '100%',
+                aspectRatio: '16 / 9',          // ← makes the container exactly match the image shape
                 overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'flex-start',
             }}>
                 <img
-                    src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=1200"
+                    src={VerticalsBG}
                     alt="Long-exposure city lights at night"
                     style={{
                         position: 'absolute',
@@ -153,6 +157,7 @@ const VerticalsPage = () => {
                         zIndex: 1,
                     }}
                 />
+                {/* overlay and text remain the same */}
                 <div style={{
                     position: 'absolute',
                     inset: 0,
@@ -235,7 +240,7 @@ const VerticalsPage = () => {
                                 {/* Right column – image */}
                                 <div className="wf-image-box" style={imageContainerStyle}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                                        src={PrivateEquity1}
                                         alt="Abstract finance visualization with city skyline in background"
                                         style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                                     />
@@ -297,7 +302,7 @@ const VerticalsPage = () => {
                         <div className="layout-split img-left" style={{ background: 'var(--cream)' }}>
                             <div className="wf-image-box" style={{ ...imageContainerStyle, minHeight: '420px' }}>
                                 <img
-                                    src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80"
+                                    src={FamilyOffice}
                                     alt="Elegant family office meeting room with classic wooden details"
                                     style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                                 />
@@ -344,7 +349,7 @@ const VerticalsPage = () => {
                                 </div>
                                 <div className="wf-image-box" style={{ ...imageContainerStyle, minHeight: '320px' }}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=800&q=80"
+                                        src={LuxuryFinance}
                                         alt="Luxury watch movement detail – craftsmanship and precision"
                                         style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                                     />

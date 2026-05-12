@@ -1,7 +1,6 @@
 // src/pages/PhilosophyPage.jsx
 import React from 'react';
-// If you have a local image (e.g., philosophy-cover.jpg in assets/images), uncomment:
-// import philosophyImage from '../assets/images/philosophy-cover.jpg';
+import PhilosophyImage from '../assets/images/Our Philosophy Page BG.jpg'
 
 const PhilosophyPage = () => {
     const imageContainerStyle = {
@@ -79,7 +78,7 @@ const PhilosophyPage = () => {
                     {/* Image container – reliable CDN */}
                     <div className="wf-image-box" style={imageContainerStyle}>
                         <img
-                            src={reliableImageUrl}
+                            src={PhilosophyImage}
                             alt="Contemplative landscape – timeless and strategic"
                             style={{
                                 width: '100%',

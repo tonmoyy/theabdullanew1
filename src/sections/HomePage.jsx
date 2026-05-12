@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import VerticalsSnapshot from './VerticalsSnapshot';
 import WhyAbdulla from './WhyAbdulla';
 import HomeCTA from './HomeCTA';
+import HomePage from '../assets/images/Homepage.jpg'
+
 
 const Homepage = () => {
     const navbarHeight = 5; // Adjust to match your navbar's actual content height
@@ -40,7 +42,9 @@ const Homepage = () => {
                     }}
                 >
                     <img
-                        src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80"
+                        src={HomePage}
+
+
                         alt="Dark city skyline architectural hero"
                         style={{
                             width: '100%',

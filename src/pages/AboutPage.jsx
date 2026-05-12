@@ -4,9 +4,6 @@ import React from 'react';
 const AboutPage = () => {
     return (
         <>
-            {/* Page Header – "About Abdulla Capital" */}
-
-
             {/* Hero – Interior (50vh) */}
             <section
                 style={{
@@ -72,9 +69,29 @@ const AboutPage = () => {
                             Whether we are advising on a cross‑border acquisition, structuring a private equity investment, managing a family's generational wealth, or financing a high‑value asset — our approach is consistent: thorough, disciplined, and built on trust.
                         </p>
                     </div>
-                    <div className="wf-image-box" style={{ minHeight: '380px' }}>
-                        <span className="icon">🌐</span>
-                        <span>Abstract network / connectivity visual<br />Premium boardroom, or aerial city view.<br />Portrait crop preferred.</span>
+                    {/* Portrait Aerial City View */}
+                    <div
+                        style={{
+                            minHeight: '380px',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            borderRadius: '12px',
+                            boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+                            border: '1px solid rgba(184,152,106,0.25)',
+                        }}
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80"
+                            alt="Aerial night view of a global city – connectivity and ambition"
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
                     </div>
                 </div>
             </section>
@@ -179,9 +196,29 @@ const AboutPage = () => {
                             <div>PE/VC funds · Institutional investors · UHNW family offices · Sovereign‑aligned entities</div>
                         </div>
                     </div>
-                    <div className="wf-image-box" style={{ minHeight: '280px' }}>
-                        <span className="icon">🗺️</span>
-                        <span>Stylised world map highlighting<br />South Asia, GCC, W. Europe.<br />Gold accent on active regions.</span>
+                    {/* Stylised World Map with Golden Accents – reliable polished image */}
+                    <div
+                        style={{
+                            minHeight: '280px',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            borderRadius: '12px',
+                            boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+                            border: '1px solid rgba(184,152,106,0.25)',
+                        }}
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
+                            alt="Polished stylised world map with glowing golden network connections"
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
                     </div>
                 </div>
             </section>
