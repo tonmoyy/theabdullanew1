@@ -10,13 +10,13 @@ exports.handler = async (event) => {
         const { name, email, company, message } = JSON.parse(event.body);
 
         await client.sendEmail({
-            From: 'website@abdullacapital.com',
-            To: 'hello@abdullacapital.com',
+            From: 'i_hasan@bpdb.gov.bd',      // your existing verified signature
+            To:   'i_hasan@bpdb.gov.bd',      // your own email (sandbox only allows delivery to verified addresses)
             Subject: `New enquiry from ${name}`,
             HtmlBody: `<p><strong>Name:</strong> ${name}</p>
-                 <p><strong>Email:</strong> ${email}</p>
-                 <p><strong>Company:</strong> ${company}</p>
-                 <p>${message}</p>`,
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Company:</strong> ${company}</p>
+               <p>${message}</p>`,
         });
 
         return { statusCode: 200, body: JSON.stringify({ message: 'Sent' }) };
