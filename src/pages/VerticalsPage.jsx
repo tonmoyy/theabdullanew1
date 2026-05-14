@@ -6,6 +6,7 @@ import VerticalsBG from '../assets/images/Verticals Page BG Resolution.jpg';
 import FamilyOffice from '../assets/images/Family Office Left Side Picture.jpg';
 import LuxuryFinance from '../assets/images/Luxury Finance Right Side Picture.jpg';
 
+
 const verticals = [
     {
         id: "private-equity",

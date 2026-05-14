@@ -74,6 +74,7 @@ const Homepage = () => {
                         padding: '0 2rem',
                     }}
                 >
+
                     <span
                         className="overline"
                         style={{ color: 'var(--gold-light)', marginBottom: '1rem', display: 'block' }}

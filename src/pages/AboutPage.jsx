@@ -1,6 +1,8 @@
 // src/pages/AboutPage.jsx
 import React from 'react';
 import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
+// 👇 Make sure the file name and extension match your actual image file (e.g., .jpg or .png)
+import ChairmanPortrait from '../assets/images/Abdulla_Potratit.png';
 
 const AboutPage = () => {
     return (
@@ -140,11 +142,29 @@ const AboutPage = () => {
             {/* ═══ The Chairman – Image Left, Text Right ═══ */}
             <section style={{ padding: 0 }}>
                 <div className="layout-split img-left">
-                    <div className="wf-image-box" style={{ minHeight: '500px', background: '#1a2535' }}>
-                        <span className="icon" style={{ fontSize: '60px', opacity: 0.3 }}>👤</span>
-                        <span style={{ color: 'rgba(255,255,255,0.6)' }}>
-                            Formal portrait of Chairman.<br />High resolution, aspirational.<br />Dark or neutral studio background.
-                        </span>
+                    {/* Chairman Portrait Container – image stays strictly within */}
+                    <div
+                        style={{
+                            minHeight: '500px',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            borderRadius: '12px',
+                            boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+                            border: '1px solid rgba(184,152,106,0.25)',
+                        }}
+                    >
+                        <img
+                            src={ChairmanPortrait}
+                            alt="Chairman's portrait – formal, high resolution, neutral studio background"
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                            }}
+                        />
                     </div>
                     <div className="text-block" style={{ padding: '50px 40px' }}>
                         <span className="overline">Leadership</span>
