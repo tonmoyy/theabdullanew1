@@ -5,7 +5,14 @@ import { Link } from 'react-router-dom';
 const HomeCTA = () => (
     <section style={{ backgroundColor: 'var(--navy)', padding: '5rem 2rem', textAlign: 'center', position: 'relative' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            {/* Overline */}
+            {/* Golden overline */}
+            <div style={{
+                width: '50px',
+                height: '2px',
+                background: 'var(--gold)',
+                margin: '0 auto 14px',
+            }}></div>
+
             <span style={{
                 color: 'var(--gold-light)',
                 fontSize: '10px',
@@ -15,10 +22,9 @@ const HomeCTA = () => (
                 display: 'block',
                 marginBottom: '1rem',
             }}>
-        Next Steps
-      </span>
+                Next Steps
+            </span>
 
-            {/* Heading */}
             <h2 style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 400,
@@ -29,7 +35,6 @@ const HomeCTA = () => (
                 Explore What We Do
             </h2>
 
-            {/* Description */}
             <p style={{
                 fontFamily: "'Montserrat', sans-serif",
                 color: 'rgba(255,255,255,0.75)',
@@ -40,17 +45,16 @@ const HomeCTA = () => (
                 From private equity to strategic advisory, every vertical of Abdulla Capital is built with the same founding discipline.
             </p>
 
-            {/* CTA Buttons */}
             <Link
                 to="/verticals"
-                className="btn btn-primary"   // uses wireframe classes (gold bg, navy text)
+                className="btn btn-primary"
                 style={{ marginRight: '16px' }}
             >
                 View Our Verticals
             </Link>
             <Link
                 to="/contact"
-                className="btn btn-outline"   // transparent with white border
+                className="btn btn-outline"
             >
                 Contact Us
             </Link>

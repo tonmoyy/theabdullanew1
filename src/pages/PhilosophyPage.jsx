@@ -1,6 +1,6 @@
 // src/pages/PhilosophyPage.jsx
 import React from 'react';
-import PhilosophyImage from '../assets/images/Our Philosophy Page BG.jpg'
+import PhilosophyImage from '../assets/images/Investment Philosophy Right Side Photo.jpg';
 
 const PhilosophyPage = () => {
     const imageContainerStyle = {
@@ -13,14 +13,10 @@ const PhilosophyPage = () => {
         background: '#1a1a2e',
     };
 
-    // Reliable, always‑working image URL (Cloudimage mirror of a free stock photo)
-    const reliableImageUrl = 'https://picsum.photos/id/104/800/1000?grayscale'; // landscape, contemplative
-    // Alternatively, a direct Unsplash image that allows hotlinking:
-    // const reliableImageUrl = 'https://images.pexels.com/photos/4737482/pexels-photo-4737482.jpeg?auto=compress&cs=tinysrgb&w=800';
+    const reliableImageUrl = 'https://picsum.photos/id/104/800/1000?grayscale';
 
     return (
         <>
-
             {/* Hero – Interior */}
             <section style={{ background: 'var(--navy)', padding: '60px 40px', position: 'relative' }}>
                 <span className="overline" style={{ color: 'var(--gold-light)' }}>How We Think</span>
@@ -60,7 +56,6 @@ const PhilosophyPage = () => {
                             </p>
                         </div>
                     </div>
-                    {/* Image container – reliable CDN */}
                     <div className="wf-image-box" style={imageContainerStyle}>
                         <img
                             src={PhilosophyImage}
@@ -75,7 +70,6 @@ const PhilosophyPage = () => {
                             }}
                             onError={(e) => {
                                 e.target.onerror = null;
-                                // If even this fails, show a dark gradient with text
                                 e.target.style.display = 'none';
                                 e.target.parentNode.style.background = 'linear-gradient(135deg, #1e2a3a 0%, #0f172a 100%)';
                                 e.target.parentNode.innerHTML = '<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.6); font-family:serif; font-size:14px; text-align:center; padding:20px;">Timeless perspective<br/>Abdulla Capital</div>';
@@ -85,8 +79,86 @@ const PhilosophyPage = () => {
                 </div>
             </section>
 
-            {/* Rest of the page unchanged (Capital Discipline, Sector Preferences, Evaluation Framework) */}
-            {/* ... (keep everything below exactly as in your original) ... */}
+            {/* ═══ Capital Discipline (Dark Band) ═══ */}
+            <section className="dark-band" style={{ padding: '60px 40px' }}>
+                <div className="layout-split" style={{ gridTemplateColumns: '2fr 3fr', gap: '60px', alignItems: 'center' }}>
+                    <div className="pull-quote on-dark" style={{ fontSize: '26px', borderLeft: '4px solid var(--gold)' }}>
+                        "Capital deployed without discipline is not investment — it is speculation."
+                    </div>
+                    <div>
+                        <span className="overline" style={{ color: 'var(--gold-light)' }}>Capital Discipline</span>
+                        <p className="body-copy light">
+                            We believe in protecting downside before capturing upside. Our due diligence standards are uncompromising. Before any commitment is made — financial, advisory, or otherwise — we conduct thorough analysis: financial modelling, commercial assessment, regulatory review, and independent verification.
+                        </p>
+                        <p className="body-copy light" style={{ marginTop: '12px' }}>
+                            We are not in a hurry to close. We are in the business of getting it right. Where we advise, we apply the same standards as if the capital were our own. Our clients deserve nothing less.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ Sector Preferences (Cream, Three Columns) ═══ */}
+            <section className="cream-band" style={{ padding: '60px 30px' }}>
+                <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                    <span className="overline">Where We Focus</span>
+                    <div className="h2-section">Sector Preferences</div>
+                </div>
+                <div className="layout-3col">
+                    <div className="col-block" style={{ borderRight: '1px solid var(--border)', textAlign: 'center' }}>
+                        <div style={{ fontSize: '32px', marginBottom: '12px' }}>📈</div>
+                        <div className="h3-sub">Private Markets</div>
+                        <p className="body-copy" style={{ fontSize: '12.5px' }}>
+                            Growth-stage private companies, cross-border M&A, and co-investment opportunities with institutional partners.
+                        </p>
+                    </div>
+                    <div className="col-block" style={{ borderRight: '1px solid var(--border)', textAlign: 'center' }}>
+                        <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏛️</div>
+                        <div className="h3-sub">Family Wealth</div>
+                        <p className="body-copy" style={{ fontSize: '12.5px' }}>
+                            Multigenerational wealth structuring, estate planning, and the institutional management of private family capital.
+                        </p>
+                    </div>
+                    <div className="col-block" style={{ textAlign: 'center' }}>
+                        <div style={{ fontSize: '32px', marginBottom: '12px' }}>💎</div>
+                        <div className="h3-sub">Luxury Assets</div>
+                        <p className="body-copy" style={{ fontSize: '12.5px' }}>
+                            Tangible and investment-grade luxury assets where value requires expert understanding and specialist financing structures.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ How We Evaluate Opportunities (Split Layout) ═══ */}
+            <section style={{ padding: 0 }}>
+                <div className="layout-split" style={{ gridTemplateColumns: '2fr 3fr', gap: 0, border: '1px solid #ddd' }}>
+                    <div className="text-block" style={{ padding: '50px 40px', background: 'var(--section-bg)', borderRight: '1px solid var(--light-gray)' }}>
+                        <span className="overline">Our Framework</span>
+                        <div className="h2-section">How We Evaluate Opportunities</div>
+                        <p className="body-copy" style={{ marginTop: '16px' }}>
+                            Every opportunity — whether an investment, an advisory mandate, or a financing engagement — is evaluated through the same lens. Five questions. No exceptions.
+                        </p>
+                    </div>
+                    <div style={{ padding: '30px 40px' }}>
+                        {[
+                            { title: 'Do we understand the sector?', text: 'If we do not have genuine expertise in a sector, we do not take the mandate. We refer, or we partner — but we do not pretend.' },
+                            { title: 'Is the team or ownership credible?', text: 'We invest in people as much as in assets. The quality of management, the integrity of principals, and the strength of governance are non-negotiable criteria.' },
+                            { title: 'Is the value creation path clear?', text: 'We need to see — with specificity — how value is created, protected, and ultimately realised. Narrative alone does not satisfy our evaluation process.' },
+                            { title: 'Is the structure right?', text: 'Good ideas in bad structures produce bad outcomes. We pay as much attention to how a deal is structured as to the underlying opportunity itself.' },
+                            { title: 'Does it meet our long-term standard?', text: 'Would we be comfortable with this commitment over a five- to ten-year horizon? If the answer is yes, we proceed. If not, we do not — regardless of short-term pressure.' }
+                        ].map((item, idx) => (
+                            <div key={idx} className="eval-item" style={{ borderBottom: idx === 4 ? 'none' : '1px solid var(--light-gray)' }}>
+                                <div className="eval-num">{idx + 1}</div>
+                                <div>
+                                    <strong style={{ fontSize: '13px', color: 'var(--navy)' }}>{item.title}</strong>
+                                    <p className="body-copy" style={{ fontSize: '12px', marginTop: '4px' }}>
+                                        {item.text}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
