@@ -69,21 +69,21 @@ const EngagementPage = () => {
                 </div>
                 <div className="layout-3col">
                     <div className="card" style={{ margin: '0 8px' }}>
-                        <div className="card-icon">🏦</div>
+                        <div className="card-icon"></div>
                         <h4>Investors & PE/VC Funds</h4>
                         <p>
                             Institutional and private investors seeking sports, private equity, or luxury asset opportunities — we provide buy‑side advisory, target identification, due diligence, and deal structuring.
                         </p>
                     </div>
                     <div className="card" style={{ margin: '0 8px' }}>
-                        <div className="card-icon">👨‍👩‍👧‍👦</div>
+                        <div className="card-icon"></div>
                         <h4>Ultra‑High‑Net‑Worth Individuals & Families</h4>
                         <p>
                             Principals and families requiring bespoke wealth management, succession planning, or private market investment advisory — with total discretion and deep personalisation.
                         </p>
                     </div>
                     <div className="card" style={{ margin: '0 8px' }}>
-                        <div className="card-icon">🎨</div>
+                        <div className="card-icon"></div>
                         <h4>Luxury Asset Holders & Collectors</h4>
                         <p>
                             Private individuals and estates requiring specialist financing solutions for high‑value collections, trophy assets, or luxury lifestyle investments.

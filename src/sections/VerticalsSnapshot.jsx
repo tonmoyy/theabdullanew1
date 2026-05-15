@@ -4,22 +4,22 @@ import { Link } from 'react-router-dom';
 
 const cards = [
     {
-        icon: '📈',
+        icon: '',
         title: 'Private Equity',
         desc: 'Direct investments in private businesses with strong fundamentals and long‑term value creation potential.',
     },
     {
-        icon: '⚖️',
+        icon: '',
         title: 'Advisory',
-        desc: 'Specialised M&A, transaction, and strategic advisory — with a dedicated focus on the global sports industry.',
+        desc: 'Specialised M&A, transaction, and strategic advisory — with a dedicated focus on the global - industry.',
     },
     {
-        icon: '🏛️',
+        icon: '',
         title: 'Family Office',
         desc: 'Bespoke wealth structuring, preservation, and growth strategies for principals and ultra‑high‑net‑worth families.',
     },
     {
-        icon: '💎',
+        icon: '',
         title: 'Luxury Finance',
         desc: 'Structured financing solutions for high‑value assets, collections, and lifestyle investments in the premium segment.',
     },

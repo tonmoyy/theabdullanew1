@@ -1,13 +1,12 @@
 // src/pages/AboutPage.jsx
 import React from 'react';
 import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
-// 👇 Make sure the file name and extension match your actual image file (e.g., .jpg or .png)
-import ChairmanPortrait from '../assets/images/Abdulla_Potratit.png';
+import ChairmanPortrait from '../assets/images/Abdulla_Salem.JPEG';
 
 const AboutPage = () => {
     return (
         <>
-            {/* Hero – Interior (50vh) */}
+            {/* Hero – identical placement to EngagementPage */}
             <section
                 style={{
                     position: 'relative',
@@ -72,7 +71,6 @@ const AboutPage = () => {
                             Whether we are advising on a cross‑border acquisition, structuring a private equity investment, managing a family's generational wealth, or financing a high‑value asset — our approach is consistent: thorough, disciplined, and built on trust.
                         </p>
                     </div>
-                    {/* Portrait Aerial City View */}
                     <div
                         style={{
                             minHeight: '380px',
@@ -114,10 +112,10 @@ const AboutPage = () => {
 
                 <div className="layout-4col" style={{ marginTop: '36px' }}>
                     {[
-                        { icon: '🏢', title: 'Real Estate', desc: 'Trophy assets across primary markets' },
-                        { icon: '⚽', title: 'Sports Assets', desc: 'Clubs, academies, and sports infrastructure' },
-                        { icon: '🤝', title: 'Commercial Ventures', desc: 'Diversified business interests and partnerships' },
-                        { icon: '👨‍👩‍👧', title: 'Family Investments', desc: 'Multi‑generational capital across asset classes' },
+                        { icon: '', title: 'Real Estate', desc: 'Trophy assets across primary markets' },
+                        { icon: '', title: 'Sports Assets', desc: 'Clubs, academies, and sports infrastructure' },
+                        { icon: '', title: 'Commercial Ventures', desc: 'Diversified business interests and partnerships' },
+                        { icon: '', title: 'Family Investments', desc: 'Multi‑generational capital across asset classes' },
                     ].map((item, idx) => (
                         <div key={idx} style={{
                             background: 'rgba(255,255,255,0.06)',
@@ -142,7 +140,6 @@ const AboutPage = () => {
             {/* ═══ The Chairman – Image Left, Text Right ═══ */}
             <section style={{ padding: 0 }}>
                 <div className="layout-split img-left">
-                    {/* Chairman Portrait Container – image stays strictly within */}
                     <div
                         style={{
                             minHeight: '500px',
@@ -217,7 +214,6 @@ const AboutPage = () => {
                             <div>PE/VC funds · Institutional investors · UHNW family offices · Sovereign‑aligned entities</div>
                         </div>
                     </div>
-                    {/* Stylised World Map with Golden Accents – reliable polished image */}
                     <div
                         style={{
                             minHeight: '280px',

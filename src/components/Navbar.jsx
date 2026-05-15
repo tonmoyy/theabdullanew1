@@ -1,7 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-// Import the SVG logo
 import logo from '../assets/svg/Logo-AC-BG-Rmvd.svg';
 
 const Navbar = () => {
@@ -55,8 +54,8 @@ const Navbar = () => {
 
     return (
         <>
+            {/* ── Desktop Navbar (unchanged) ── */}
             <nav className="nav-bar" style={navStyle}>
-                {/* Logo image instead of text */}
                 <Link
                     to="/"
                     className="nav-logo"
@@ -81,6 +80,7 @@ const Navbar = () => {
                 >
                     <Link to="/about">About</Link>
 
+                    {/* Vertical Dropdown (unchanged) */}
                     <div
                         ref={dropdownRef}
                         style={{ position: 'relative' }}
@@ -106,27 +106,22 @@ const Navbar = () => {
                             }}
                         >
                             Verticals
-                            <svg
-                                width="11" height="11" viewBox="0 0 12 12"
-                                fill="none" xmlns="http://www.w3.org/2000/svg"
-                                style={{
-                                    transition: 'transform 0.2s',
-                                    transform: verticalsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                                    opacity: 0.7,
-                                }}
-                            >
+                            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                 style={{
+                                     transition: 'transform 0.2s',
+                                     transform: verticalsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                     opacity: 0.7,
+                                 }}>
                                 <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
-
+                        {/* Dropdown panel (unchanged) */}
                         <div
                             style={{
                                 position: 'absolute',
                                 top: '100%',
                                 left: '50%',
-                                transform: verticalsOpen
-                                    ? 'translateX(-50%) translateY(0)'
-                                    : 'translateX(-50%) translateY(-6px)',
+                                transform: verticalsOpen ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-6px)',
                                 backgroundColor: 'var(--navy)',
                                 border: '1px solid rgba(255,255,255,0.08)',
                                 borderRadius: '6px',
@@ -197,7 +192,6 @@ const Navbar = () => {
                     <span></span>
                 </button>
 
-                {/* Golden line that vanishes on scroll */}
                 <div
                     style={{
                         position: 'absolute',
@@ -213,34 +207,172 @@ const Navbar = () => {
                 />
             </nav>
 
-            <div className={`ta-mobile-header ${mobileOpen ? 'open' : ''}`}>
-                <div className="ta-container-wide">
-                    <nav className="ta-mobile-header__menu">
-                        <li><Link to="/about" onClick={toggleMobile}>About</Link></li>
-                        <li><Link to="/verticals" onClick={toggleMobile}>Verticals</Link></li>
-                        {verticals.map((item) => (
-                            <li key={item.to} style={{ paddingLeft: '1rem' }}>
-                                <Link to={item.to} onClick={toggleMobile}>{item.label}</Link>
-                            </li>
-                        ))}
-                        <li><Link to="/philosophy" onClick={toggleMobile}>Philosophy</Link></li>
-                        <li><Link to="/engagement" onClick={toggleMobile}>Engagement</Link></li>
-                        <li>
-                            <Link
-                                to="/contact"
-                                onClick={toggleMobile}
-                                className="nav-cta"
-                                style={{
-                                    display: 'inline-block',
-                                    color: '#ffffff',
-                                    textShadow: '0 0 8px rgba(255,200,100,0.6), 0 0 16px rgba(255,180,50,0.4)',
-                                }}
-                            >
-                                Contact Us
-                            </Link>
-                        </li>
-                    </nav>
-                </div>
+            {/* ══════════ MODERN MOBILE MENU ══════════ */}
+            <div className={`ta-mobile-header ${mobileOpen ? 'open' : ''}`}
+                 style={{
+                     position: 'fixed',
+                     top: 0,
+                     left: 0,
+                     width: '100%',
+                     height: '100vh',
+                     backgroundColor: 'rgba(10, 14, 20, 0.95)',
+                     backdropFilter: 'blur(12px)',
+                     zIndex: 999,
+                     display: mobileOpen ? 'flex' : 'none',
+                     flexDirection: 'column',
+                     alignItems: 'center',
+                     justifyContent: 'center',
+                     transition: 'opacity 0.3s ease',
+                 }}
+            >
+                <button
+                    onClick={toggleMobile}
+                    aria-label="Close menu"
+                    style={{
+                        position: 'absolute',
+                        top: 24,
+                        right: 24,
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '28px',
+                        color: 'var(--white)',
+                        cursor: 'pointer',
+                        lineHeight: 1,
+                    }}
+                >
+                    ✕
+                </button>
+
+                <nav style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 'clamp(24px, 6vh, 40px)',  /* dynamic spacing */
+                    width: '100%',
+                    padding: '0 20px',
+                }}>
+                    {/* Main Links */}
+                    <Link to="/about" onClick={toggleMobile}
+                          style={{
+                              fontFamily: "'Cormorant Garamond', serif",
+                              fontSize: 'clamp(28px, 6vw, 36px)',
+                              color: 'var(--white)',
+                              textDecoration: 'none',
+                              fontWeight: 300,
+                              letterSpacing: '0.05em',
+                              transition: 'color 0.2s',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.color = 'var(--gold-light)'}
+                          onMouseLeave={e => e.currentTarget.style.color = 'var(--white)'}
+                    >
+                        About
+                    </Link>
+
+                    {/* Verticals Section with Sub-links */}
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '8px',
+                    }}>
+                        <Link to="/verticals" onClick={toggleMobile}
+                              style={{
+                                  fontFamily: "'Cormorant Garamond', serif",
+                                  fontSize: 'clamp(28px, 6vw, 36px)',
+                                  color: 'var(--white)',
+                                  textDecoration: 'none',
+                                  fontWeight: 300,
+                                  letterSpacing: '0.05em',
+                                  transition: 'color 0.2s',
+                              }}
+                              onMouseEnter={e => e.currentTarget.style.color = 'var(--gold-light)'}
+                              onMouseLeave={e => e.currentTarget.style.color = 'var(--white)'}
+                        >
+                            Verticals
+                        </Link>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '4px',
+                            marginTop: '4px',
+                        }}>
+                            {verticals.map(v => (
+                                <Link key={v.to} to={v.to} onClick={toggleMobile}
+                                      style={{
+                                          fontFamily: "'Montserrat', sans-serif",
+                                          fontSize: '13px',
+                                          fontWeight: 500,
+                                          color: 'rgba(255,255,255,0.7)',
+                                          textDecoration: 'none',
+                                          letterSpacing: '0.1em',
+                                          textTransform: 'uppercase',
+                                          transition: 'color 0.2s',
+                                      }}
+                                      onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
+                                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
+                                >
+                                    {v.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    <Link to="/philosophy" onClick={toggleMobile}
+                          style={{
+                              fontFamily: "'Cormorant Garamond', serif",
+                              fontSize: 'clamp(28px, 6vw, 36px)',
+                              color: 'var(--white)',
+                              textDecoration: 'none',
+                              fontWeight: 300,
+                              letterSpacing: '0.05em',
+                              transition: 'color 0.2s',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.color = 'var(--gold-light)'}
+                          onMouseLeave={e => e.currentTarget.style.color = 'var(--white)'}
+                    >
+                        Philosophy
+                    </Link>
+
+                    <Link to="/engagement" onClick={toggleMobile}
+                          style={{
+                              fontFamily: "'Cormorant Garamond', serif",
+                              fontSize: 'clamp(28px, 6vw, 36px)',
+                              color: 'var(--white)',
+                              textDecoration: 'none',
+                              fontWeight: 300,
+                              letterSpacing: '0.05em',
+                              transition: 'color 0.2s',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.color = 'var(--gold-light)'}
+                          onMouseLeave={e => e.currentTarget.style.color = 'var(--white)'}
+                    >
+                        Engagement
+                    </Link>
+
+                    {/* Contact CTA */}
+                    <Link to="/contact" onClick={toggleMobile}
+                          className="nav-cta"
+                          style={{
+                              marginTop: 'clamp(20px, 4vh, 32px)',
+                              background: 'var(--gold)',
+                              color: 'var(--navy)',
+                              padding: '14px 32px',
+                              fontSize: '13px',
+                              fontWeight: 700,
+                              letterSpacing: '0.14em',
+                              textTransform: 'uppercase',
+                              textDecoration: 'none',
+                              borderRadius: '2px',
+                              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                              transition: 'background 0.3s',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.background = 'var(--gold-light)'}
+                          onMouseLeave={e => e.currentTarget.style.background = 'var(--gold)'}
+                    >
+                        Contact Us
+                    </Link>
+                </nav>
             </div>
         </>
     );

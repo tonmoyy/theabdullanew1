@@ -2,10 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PrivateEquity1 from '../assets/images/PrivateEquity-1.jpg';
-import VerticalsBG from '../assets/images/Verticals Page BG Resolution.jpg';
+import VerticalsBG from '../assets/images/Verticals Page BG Resolution.png';
 import FamilyOffice from '../assets/images/Family Office Left Side Picture.jpg';
 import LuxuryFinance from '../assets/images/Luxury Finance Right Side Picture.jpg';
-
 
 const verticals = [
     {
@@ -119,32 +118,19 @@ const VerticalsPage = () => {
 
     return (
         <>
-            {/*/!* Page Header *!/*/}
-            {/*<div style={{*/}
-            {/*    background: 'var(--navy)',*/}
-            {/*    color: 'var(--white)',*/}
-            {/*    padding: '20px 40px 20px 20px',*/}
-            {/*    display: 'flex',*/}
-            {/*    alignItems: 'center',*/}
-            {/*    justifyContent: 'flex-start',*/}
-            {/*    borderTop: '1px solid rgba(184,152,106,0.15)',*/}
-            {/*    borderBottom: '1px solid rgba(184,152,106,0.15)',*/}
-            {/*}}>*/}
-            {/*    <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', fontWeight: 400, letterSpacing: '0.04em', margin: 0 }}>*/}
-            {/*        Our Verticals*/}
-            {/*    </h2>*/}
-            {/*</div>*/}
-
-            {/* Hero – Interior with long‑exposure dark city shot */}
-            <section style={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '16 / 9',          // ← makes the container exactly match the image shape
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-            }}>
+            {/* Hero – 50vh, filled gaps with background colour */}
+            <section
+                style={{
+                    position: 'relative',
+                    height: '50vh',
+                    minHeight: '320px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                    backgroundColor: '#0a0e14', // dark navy matches image edges; fills empty space when image is "contain"
+                }}
+            >
                 <img
                     src={VerticalsBG}
                     alt="Long-exposure city lights at night"
@@ -154,22 +140,25 @@ const VerticalsPage = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover',
+                        objectFit: 'contain',  // image shown in full, no cropping
                         zIndex: 1,
                     }}
                 />
-                {/* overlay and text remain the same */}
-                <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    backgroundColor: 'rgba(0,0,0,0.4)',
-                    zIndex: 2,
-                }} />
-                <div style={{
-                    position: 'relative',
-                    zIndex: 3,
-                    padding: '60px 40px',
-                }}>
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                        zIndex: 2,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'relative',
+                        zIndex: 3,
+                        padding: '60px 40px',
+                    }}
+                >
                     <span className="overline" style={{ color: 'var(--gold-light)' }}>Our Verticals</span>
                     <h1 className="h1-display on-dark">Four Disciplines.<br /><em>One Philosophy.</em></h1>
                     <p className="body-copy light" style={{ maxWidth: '600px', marginTop: '16px' }}>
@@ -217,7 +206,6 @@ const VerticalsPage = () => {
                     <>
                         <section style={{ padding: 0 }}>
                             <div className="layout-split" style={{ gridTemplateColumns: '3fr 2fr', border: '1px solid var(--light-gray)' }}>
-                                {/* Left column – text block */}
                                 <div className="text-block" style={{ padding: '50px 40px' }}>
                                     <span className="tag">01 — Private Equity</span>
                                     <h2 className="h2-section">{currentVertical.tagline}</h2>
@@ -230,15 +218,11 @@ const VerticalsPage = () => {
                                             <span key={s} className="inline-tag">{s}</span>
                                         ))}
                                     </div>
-
-                                    {/* Who We Partner With – moved inside left column */}
                                     <div style={{ marginTop: '32px', paddingTop: '16px', borderTop: '1px solid rgba(184,152,106,0.25)' }}>
                                         <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--navy)', marginBottom: '12px' }}>Who We Partner With</div>
                                         <p className="body-copy" style={{ marginBottom: 0 }}>{currentVertical.partnerText}</p>
                                     </div>
                                 </div>
-
-                                {/* Right column – image */}
                                 <div className="wf-image-box" style={imageContainerStyle}>
                                     <img
                                         src={PrivateEquity1}
@@ -248,8 +232,6 @@ const VerticalsPage = () => {
                                 </div>
                             </div>
                         </section>
-
-                        {/* Approach cards (3-column) */}
                         <section className="cream-band" style={{ padding: '30px' }}>
                             <div className="layout-3col">
                                 {currentVertical.approachCards.map((card, i) => (
@@ -274,7 +256,6 @@ const VerticalsPage = () => {
                             <h2 className="h2-section" style={{ color: 'var(--white)', margin: '16px 0 12px' }}>{currentVertical.tagline}</h2>
                             <p className="body-copy light" style={{ maxWidth: '680px' }}>{currentVertical.intro}</p>
                         </section>
-
                         <div style={{ padding: '30px', background: '#fff' }}>
                             <div className="service-grid">
                                 {currentVertical.services.map((s, i) => (
@@ -285,7 +266,6 @@ const VerticalsPage = () => {
                                     </div>
                                 ))}
                             </div>
-
                             {currentVertical.also && (
                                 <div style={{ background: 'var(--section-bg)', border: '1px solid var(--border)', padding: '24px', marginTop: '20px' }}>
                                     <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--navy)', marginBottom: '10px' }}>Also Within Advisory</div>
@@ -357,7 +337,6 @@ const VerticalsPage = () => {
                                 </div>
                             </div>
                         </section>
-
                         <section style={{ padding: '30px' }}>
                             <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--navy)', marginBottom: '16px' }}>Asset Classes We Cover</div>
                             {currentVertical.assetClasses.map(a => (

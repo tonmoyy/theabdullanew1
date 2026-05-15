@@ -78,7 +78,7 @@ const Footer = () => {
                             <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
                                 {/* LinkedIn */}
                                 <a
-                                    href="https://linkedin.com"
+                                    href="https://www.linkedin.com/company/abdullacapital/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
