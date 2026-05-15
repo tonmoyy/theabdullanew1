@@ -1,7 +1,7 @@
 // src/pages/AboutPage.jsx
 import React from 'react';
 import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
-import ChairmanPortrait from '../assets/images/Abdulla_Salem.JPEG';
+import ChairmanPortrait from '../assets/images/Abdulla_Salem.jpeg';
 
 const AboutPage = () => {
     return (
