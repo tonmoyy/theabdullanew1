@@ -165,7 +165,7 @@ const AboutPage = () => {
                     </div>
                     <div className="text-block" style={{ padding: '50px 40px' }}>
                         <span className="overline">Leadership</span>
-                        <h2 className="h2-section">[Chairman Name]</h2>
+                        <h2 className="h2-section">Abdulla Salem</h2>
                         <div style={{ fontSize: '12px', color: 'var(--gold)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '20px', fontWeight: 600 }}>
                             Founder &amp; Chairman, Abdulla Capital
                         </div>
@@ -173,7 +173,7 @@ const AboutPage = () => {
                             “The firm reflects the values of the man who built it.”
                         </div>
                         <p className="body-copy">
-                            [Chairman Name] has spent [X] years at the intersection of private capital, sports investment, and strategic advisory. His career has taken him across [relevant geographies and sectors], and through each chapter, one principle has remained constant: capital works best when it is patient, purposeful, and backed by deep knowledge of the sector it enters.
+                            Abdulla Salem has spent [X] years at the intersection of private capital, sports investment, and strategic advisory. His career has taken him across [relevant geographies and sectors], and through each chapter, one principle has remained constant: capital works best when it is patient, purposeful, and backed by deep knowledge of the sector it enters.
                         </p>
                         <p className="body-copy">
                             He founded Abdulla Capital with a clear mandate — to create a firm that combines the reach of a global institution with the conviction of a private investor. A firm that would advise the way a principal would invest: carefully, selectively, and always with the long view in mind.
