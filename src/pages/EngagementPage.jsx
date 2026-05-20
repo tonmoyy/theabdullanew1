@@ -1,7 +1,7 @@
 // src/pages/EngagementPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import EnagagementBG from '../assets/images/Engagement Page BG  Resolution.jpg';
+import EnagagementBG from '../assets/images/5 Engagement Page BG  Resolution.jpg';
 
 const EngagementPage = () => {
     return (

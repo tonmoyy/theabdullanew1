@@ -1,6 +1,7 @@
 // src/pages/PhilosophyPage.jsx
 import React from 'react';
-import PhilosophyImage from '../assets/images/Investment Philosophy Right Side Photo.jpg';
+import PhilosophyImage from '../assets/images/4.1 Investment Philosophy Right Side Photo.jpg';
+import PhilosophyBG from '../assets/images/4 Our Philosophy Page BG.jpg';
 
 const PhilosophyPage = () => {
     const imageContainerStyle = {
@@ -17,15 +18,57 @@ const PhilosophyPage = () => {
 
     return (
         <>
-            {/* Hero – Interior */}
-            <section style={{ background: 'var(--navy)', padding: '60px 40px', position: 'relative' }}>
-                <span className="overline" style={{ color: 'var(--gold-light)' }}>How We Think</span>
-                <h1 className="h1-display on-dark" style={{ maxWidth: '580px' }}>
-                    The principles that guide<br /><em>everything we do.</em>
-                </h1>
-                <p className="body-copy light" style={{ maxWidth: '580px', marginTop: '16px' }}>
-                    Philosophy is not a page on a website. It is the reason decisions get made the way they do — when the pressure is on, when the deal is complex, when the easy path and the right path diverge.
-                </p>
+            {/* Hero – with full‑bleed background image (exactly like AboutPage) */}
+            <section
+                style={{
+                    position: 'relative',
+                    height: '50vh',
+                    minHeight: '320px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                }}
+            >
+                <img
+                    src={PhilosophyBG}
+                    alt="Philosophy Background"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        zIndex: 1,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                        zIndex: 2,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'relative',
+                        zIndex: 3,
+                        padding: '60px 40px',
+                    }}
+                >
+                    <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                        How We Think
+                    </span>
+                    <h1 className="h1-display on-dark" style={{ maxWidth: '580px' }}>
+                        The principles that guide<br /><em>everything we do.</em>
+                    </h1>
+                    <div style={{ width: '50px', height: '2px', background: 'var(--gold)', marginTop: '20px' }}></div>
+                    <p className="body-copy light" style={{ maxWidth: '580px', marginTop: '16px' }}>
+                        Philosophy is not a page on a website. It is the reason decisions get made the way they do — when the pressure is on, when the deal is complex, when the easy path and the right path diverge.
+                    </p>
+                </div>
             </section>
 
             {/* Investment Philosophy */}

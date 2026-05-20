@@ -1,7 +1,9 @@
 // src/pages/AboutPage.jsx
 import React from 'react';
+import AboutBG from '../assets/images/2.0 About Page BG----_1501 x 352_.jpg';
 import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
 import ChairmanPortrait from '../assets/images/Abdulla_Salem.jpeg';
+import PlatformRight from '../assets/images/Page-2.1 Platform Right Side.png'
 
 const AboutPage = () => {
     return (
@@ -19,8 +21,8 @@ const AboutPage = () => {
                 }}
             >
                 <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200"
-                    alt="Modern glass architecture"
+                    src={AboutBG}
+                    alt="AboutBG"
                     style={{
                         position: 'absolute',
                         top: 0,
@@ -82,8 +84,8 @@ const AboutPage = () => {
                         }}
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80"
-                            alt="Aerial night view of a global city – connectivity and ambition"
+                            src={PlatformRight}
+                            alt="Paltform Right"
                             style={{
                                 position: 'absolute',
                                 top: 0,
