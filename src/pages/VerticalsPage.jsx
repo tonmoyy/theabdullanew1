@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PrivateEquity1 from '../assets/images/PrivateEquity-1.jpg';
-import VerticalsBG from '../assets/images/Verticals Page BG Resolution.png';
-import FamilyOffice from '../assets/images/Family Office Left Side Picture.jpg';
+import VerticalsBG from '../assets/images/3 Verticals Page BG Resolution.jpg';
+import FamilyOffice from '../assets/images/3.2 Family Office Left Side Picture.jpg';
 import LuxuryFinance from '../assets/images/Luxury Finance Right Side Picture.jpg';
 
 const verticals = [
