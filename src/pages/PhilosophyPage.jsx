@@ -14,8 +14,6 @@ const PhilosophyPage = () => {
         background: '#1a1a2e',
     };
 
-    const reliableImageUrl = 'https://picsum.photos/id/104/800/1000?grayscale';
-
     return (
         <>
             {/* Hero – with full‑bleed background image (exactly like AboutPage) */}

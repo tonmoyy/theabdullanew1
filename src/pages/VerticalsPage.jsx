@@ -119,53 +119,54 @@ const VerticalsPage = () => {
     return (
         <>
             {/* Hero – 50vh, filled gaps with background colour */}
-            <section
-                style={{
-                    position: 'relative',
-                    height: '50vh',
-                    minHeight: '320px',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
-                    backgroundColor: '#0a0e14', // dark navy matches image edges; fills empty space when image is "contain"
-                }}
-            >
-                <img
-                    src={VerticalsBG}
-                    alt="Long-exposure city lights at night"
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',  // image shown in full, no cropping
-                        zIndex: 1,
-                    }}
-                />
-                <div
-                    style={{
-                        position: 'absolute',
-                        inset: 0,
-                        backgroundColor: 'rgba(0,0,0,0.5)',
-                        zIndex: 2,
-                    }}
-                />
-                <div
-                    style={{
-                        position: 'relative',
-                        zIndex: 3,
-                        padding: '60px 40px',
-                    }}
-                >
-                    <span className="overline" style={{ color: 'var(--gold-light)' }}>Our Verticals</span>
-                    <h1 className="h1-display on-dark">Four Disciplines.<br /><em>One Philosophy.</em></h1>
-                    <p className="body-copy light" style={{ maxWidth: '600px', marginTop: '16px' }}>
-                        Abdulla Capital is structured around four specialised verticals, each operating with distinct expertise but sharing a unified foundation: disciplined capital, deep relationships, and long-term orientation.
-                    </p>
-                </div>
-            </section>
+          
+<section
+    style={{
+        position: 'relative',
+        height: '50vh',
+        minHeight: '320px',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        // backgroundColor removed — image will now cover fully
+    }}
+>
+    <img
+        src={VerticalsBG}
+        alt="Long-exposure city lights at night"
+        style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',  // ← changed from 'contain'
+            zIndex: 1,
+        }}
+    />
+    <div
+        style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: 2,
+        }}
+    />
+    <div
+        style={{
+            position: 'relative',
+            zIndex: 3,
+            padding: '60px 40px',
+        }}
+    >
+        <span className="overline" style={{ color: 'var(--gold-light)' }}>Our Verticals</span>
+        <h1 className="h1-display on-dark">Four Disciplines.<br /><em>One Philosophy.</em></h1>
+        <p className="body-copy light" style={{ maxWidth: '600px', marginTop: '16px' }}>
+            Abdulla Capital is structured around four specialised verticals, each operating with distinct expertise but sharing a unified foundation: disciplined capital, deep relationships, and long-term orientation.
+        </p>
+    </div>
+</section>
 
             {/* Sticky Tab Navigation */}
             <div style={{

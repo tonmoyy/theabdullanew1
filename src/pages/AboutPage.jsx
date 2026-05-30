@@ -2,7 +2,7 @@
 import React from 'react';
 import AboutBG from '../assets/images/2.0 About Page BG----_1501 x 352_.jpg';
 import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
-import ChairmanPortrait from '../assets/images/Abdulla_Salem.jpeg';
+import ChairmanPortrait from '../assets/images/Abdulla_Salem.svg';
 import PlatformRight from '../assets/images/Page-2.1 Platform Right Side.png'
 
 const AboutPage = () => {
