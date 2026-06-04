@@ -6,8 +6,6 @@ import EnagagementBG from '../assets/images/5 Engagement Page BG  Resolution.jpg
 const EngagementPage = () => {
     return (
         <>
-
-
             {/* Hero – Interior (50vh) */}
             <section
                 style={{
@@ -51,10 +49,13 @@ const EngagementPage = () => {
                         padding: '60px 40px',
                     }}
                 >
-          <span className="overline" style={{ color: 'var(--gold-light)' }}>
-            Engagement
-          </span>
-                    <h1 className="h1-display on-dark">Working With Us</h1>
+                    <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                        Engagement
+                    </span>
+                    <h1 className="h1-display on-dark" style={{ maxWidth: '600px' }}>
+                        Working With<br /><em>Us.</em>
+                    </h1>
+                    <div style={{ width: '50px', height: '2px', background: 'var(--gold)', marginTop: '20px' }}></div>
                     <p className="body-copy light" style={{ maxWidth: '580px', marginTop: '16px' }}>
                         Abdulla Capital is not a firm that works with everyone. This is a deliberate choice — not an exclusionary one. Our clients receive our full attention, our full network, and the full depth of our expertise. That is only possible when we are selective.
                     </p>

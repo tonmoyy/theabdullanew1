@@ -1,5 +1,6 @@
 // src/pages/ContactPage.jsx
 import React, { useState } from 'react';
+import ContactBG from '../assets/images/Contact Page.jpg'; // Background image added
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -90,23 +91,61 @@ const ContactPage = () => {
 
     return (
         <>
-            {/* Hero – Minimal */}
+            {/* Hero – with full‑bleed background image (exactly like AboutPage) */}
             <section
                 style={{
-                    background: 'var(--navy)',
-                    padding: '60px 40px',
                     position: 'relative',
+                    height: '50vh',
+                    minHeight: '320px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
                 }}
             >
-                <span className="overline" style={{ color: 'var(--gold-light)' }}>
-                    Contact
-                </span>
-                <h1 className="h1-display on-dark">We respond to every serious enquiry.</h1>
-                <p className="body-copy light" style={{ maxWidth: '500px', marginTop: '16px' }}>
-                    Whether you are seeking advisory support, exploring an investment
-                    opportunity, or simply wish to introduce yourself — we welcome the
-                    conversation. All enquiries are acknowledged within two business days.
-                </p>
+                <img
+                    src={ContactBG}
+                    alt="Contact background"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        zIndex: 1,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                        zIndex: 2,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'relative',
+                        zIndex: 3,
+                        padding: '60px 40px',
+                    }}
+                >
+                    <span className="overline" style={{ color: 'var(--gold-light)' }}>
+                        Contact
+                    </span>
+                    <h1 className="h1-display on-dark" style={{ maxWidth: '600px' }}>
+                        We respond to
+                        <br />
+                        <em>every serious enquiry.</em>
+                    </h1>
+                    <div style={{ width: '50px', height: '2px', background: 'var(--gold)', marginTop: '20px' }}></div>
+                    <p className="body-copy light" style={{ maxWidth: '500px', marginTop: '16px' }}>
+                        Whether you are seeking advisory support, exploring an investment
+                        opportunity, or simply wish to introduce yourself — we welcome the
+                        conversation. All enquiries are acknowledged within two business days.
+                    </p>
+                </div>
             </section>
 
             {/* Contact Form + Details */}

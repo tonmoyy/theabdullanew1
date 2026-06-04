@@ -10,7 +10,7 @@ const cards = [
     },
     {
         icon: '',
-        title: 'Advisory',
+        title: 'M&A Advisory',
         desc: 'Specialised M&A, transaction, and strategic advisory — with a dedicated focus on the global - industry.',
     },
     {

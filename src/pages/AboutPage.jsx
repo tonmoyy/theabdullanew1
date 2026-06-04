@@ -1,6 +1,6 @@
 // src/pages/AboutPage.jsx
 import React from 'react';
-import AboutBG from '../assets/images/2.0 About Page BG----_1501 x 352_.jpg';
+import AboutBG from '../assets/images/2.0 About Page BG----_1501 x 352_1.jpg';
 import GlobalPresence from '../assets/images/Global Presence, Regional Intelligence Right Side.jpg';
 import ChairmanPortrait from '../assets/images/Abdulla_Salem.svg';
 import PlatformRight from '../assets/images/Page-2.1 Platform Right Side.png'
@@ -65,7 +65,7 @@ const AboutPage = () => {
                 <div className="layout-split img-right" style={{ gridTemplateColumns: '3fr 2fr' }}>
                     <div className="text-block" style={{ padding: '50px 40px' }}>
                         <span className="overline">The Platform</span>
-                        <h2 className="h2-section">More than an Advisory Firm. A Platform.</h2>
+                        <h2 className="h2-section">More than an M&A Advisory Firm. A Platform.</h2>
                         <p className="body-copy">
                             Abdulla Capital is a platform that connects capital with opportunity, and opportunity with the expertise to realise it.
                         </p>
@@ -106,16 +106,15 @@ const AboutPage = () => {
                     Part of a Broader Platform
                 </h2>
                 <p className="body-copy light" style={{ maxWidth: '680px' }}>
-                    Abdulla Capital operates as the principal advisory and investment arm within a broader holding group. The group's interests span real estate, sports assets, commercial ventures, and family investments across multiple markets.
+                    Abdulla Capital operates as the principal M&A Advisory and investment arm within a broader holding group. The group's interests span real estate, sports assets, commercial ventures, and family investments across multiple markets.
                 </p>
                 <p className="body-copy light" style={{ maxWidth: '680px', marginTop: '12px' }}>
-                    This positioning gives our clients a rare advantage: access not just to our advisory services, but to a network of affiliated principals, investment relationships, and market intelligence that most standalone firms cannot offer.
+                    This positioning gives our clients a rare advantage: access not just to our M&A Advisory services, but to a network of affiliated principals, investment relationships, and market intelligence that most standalone firms cannot offer.
                 </p>
 
-                <div className="layout-4col" style={{ marginTop: '36px' }}>
+                <div className="layout-4col" style={{ marginTop: '36px', gridTemplateColumns: 'repeat(3, 1fr)' }}>
                     {[
                         { icon: '', title: 'Real Estate', desc: 'Trophy assets across primary markets' },
-                        { icon: '', title: 'Sports Assets', desc: 'Clubs, academies, and sports infrastructure' },
                         { icon: '', title: 'Commercial Ventures', desc: 'Diversified business interests and partnerships' },
                         { icon: '', title: 'Family Investments', desc: 'Multi‑generational capital across asset classes' },
                     ].map((item, idx) => (
@@ -175,13 +174,11 @@ const AboutPage = () => {
                             “The firm reflects the values of the man who built it.”
                         </div>
                         <p className="body-copy">
-                            Abdulla Salem has spent [X] years at the intersection of private capital, sports investment, and strategic advisory. His career has taken him across [relevant geographies and sectors], and through each chapter, one principle has remained constant: capital works best when it is patient, purposeful, and backed by deep knowledge of the sector it enters.
+                            Abdulla Salem has spent multiple years at the intersection of private capital, sports investment, and strategic advisory. His career has taken him across multiple geographies and industries, and through each chapter, one principle has remained constant: capital works best when it is patient, purposeful, and backed by deep knowledge of the sector it enters.
+
                         </p>
                         <p className="body-copy">
                             He founded Abdulla Capital with a clear mandate — to create a firm that combines the reach of a global institution with the conviction of a private investor. A firm that would advise the way a principal would invest: carefully, selectively, and always with the long view in mind.
-                        </p>
-                        <p className="body-copy" style={{ color: 'var(--mid-gray)', fontSize: '12px', fontStyle: 'italic' }}>
-                            [Additional biographical detail to be provided by client — achievements, education, affiliations, board positions.]
                         </p>
                     </div>
                 </div>
@@ -195,17 +192,10 @@ const AboutPage = () => {
                         <h2 className="h2-section" style={{ marginBottom: '24px' }}>
                             Global Presence, Regional Intelligence
                         </h2>
-                        <div className="presence-row">
-                            <div className="key">Primary Markets</div>
-                            <div>
-                                <span className="inline-tag">South Asia</span>
-                                <span className="inline-tag">GCC</span>
-                                <span className="inline-tag">Western Europe</span>
-                            </div>
-                        </div>
+
                         <div className="presence-row">
                             <div className="key">Sectors of Focus</div>
-                            <div>Private Equity · Family Wealth · Luxury Assets · Strategic Advisory (Sports)</div>
+                            <div>Private Equity · Family Wealth · Luxury Assets · Strategic M&A Advisory</div>
                         </div>
                         <div className="presence-row">
                             <div className="key">Operational Model</div>

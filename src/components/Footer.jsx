@@ -38,9 +38,8 @@ const Footer = () => {
                         maxWidth: '240px',
                         marginTop: '12px'
                     }}>
-                        Private investment and advisory across four specialised verticals.
+                        Private investment and M&A Advisory across four specialised verticals.
                         <br />
-                        South Asia · GCC · Western Europe.
                     </p>
                     <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '16px' }}>
                         info@abdullacapital.com
@@ -62,7 +61,7 @@ const Footer = () => {
                     <h5>Our Verticals</h5>
                     <ul className="footer-list-reset">
                         <li><Link to="/verticals/private-equity">Private Equity</Link></li>
-                        <li><Link to="/verticals/advisory">Advisory</Link></li>
+                        <li><Link to="/verticals/advisory">M&A Advisory</Link></li>
                         <li><Link to="/verticals/family-office">Family Office</Link></li>
                         <li><Link to="/verticals/luxury-finance">Luxury Finance</Link></li>
                     </ul>

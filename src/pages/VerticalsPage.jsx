@@ -29,22 +29,22 @@ const verticals = [
         number: "02",
         title: "Advisory",
         tagline: "The best advice is not what clients want to hear — it is what they need to know.",
-        intro: "Our advisory vertical is a specialist M&A and strategic consulting practice, with a leading focus on the global sports industry. We advise ventures and investors on the full lifecycle of a transaction — from initial valuation and mandate origination through to deal closure and post-transaction integration.",
+        intro: "Our M&A Advisory vertical is a specialist M&A and strategic consulting practice, with focus on the multiple industries. We advise ventures and investors on the full lifecycle of any transaction — from initial valuation and mandate origination through to deal closure and post-transaction integration",
         services: [
-            { name: "Valuation of Sports Entities", desc: "Independent, rigorous valuations of sports clubs, academies, manufacturers, and sports-adjacent businesses. Methodologies: DCF, Comparable Market Multiples, Revenue-per-Athlete benchmarking, and Sponsorship Value analysis.", deliverable: "Independent valuation report — board-ready and investor-grade." },
-            { name: "Sell-Side Advisory", desc: "We represent sports entities seeking to attract investors, sell a majority stake, or structure a joint venture. Full process: Information Memorandum, financial modelling, investor pitch deck, data room preparation, and targeted investor outreach.", deliverable: "End-to-end transaction management until closure." },
-            { name: "Buy-Side Advisory", desc: "We represent investors, PE/VC funds, and high-net-worth individuals seeking to acquire sports-related businesses. Target identification, screening, financial due diligence, negotiation, and deal structuring.", deliverable: "Curated target shortlist and full acquisition support." },
-            { name: "Sports-Specific Due Diligence", desc: "Contract review (player, sponsorship, vendor), regulatory compliance, and financial health analysis across all revenue streams — ticketing, broadcasting, sponsorship, and merchandising.", deliverable: "Due diligence report with red-flag summary and risk assessment." },
+            { name: "Valuation of Entities", desc: "Independent, rigorous valuations of clubs, academies, manufacturers, and adjacent businesses. Methodologies: DCF, Comparable Market Multiples, Revenue-per-Member benchmarking, and Partnership Value analysis.", deliverable: "Independent valuation report — board-ready and investor-grade." },
+            { name: "Sell-Side Advisory", desc: "We represent entities seeking to attract investors, sell a majority stake, or structure a joint venture. Full process: Information Memorandum, financial modelling, investor pitch deck, data room preparation, and targeted investor outreach.", deliverable: "End-to-end transaction management until closure." },
+            { name: "Buy-Side Advisory", desc: "We represent investors, PE/VC funds, and high-net-worth individuals seeking to acquire businesses. Target identification, screening, financial due diligence, negotiation, and deal structuring.", deliverable: "Curated target shortlist and full acquisition support." },
+            { name: "Sports-Specific Due Diligence", desc: "Contract review (talent, partnership, vendor), regulatory compliance, and financial health analysis across all revenue streams — admissions, broadcasting, partnerships, and merchandising.", deliverable: "Due diligence report with red-flag summary and risk assessment." },
             { name: "Data Room Setup & Management", desc: "We build and manage secure, investor-ready virtual data rooms using institutional-grade platforms — structured for clarity, completeness, and full transparency.", deliverable: "Fully organised virtual data room, audit-ready." },
-            { name: "Investment Asset Evaluation", desc: "Commercial, sporting, and financial assessments of sports assets — including brand value analysis, fan engagement metrics, sponsorship ecosystem mapping, and financial sustainability benchmarking.", deliverable: "Investment evaluation report and comparative benchmarking dashboard." },
-            { name: "Business Strategy", desc: "Governance, long-term planning, joint ventures, and restructuring for sports organisations. Practical, implementable, and grounded in real-world market dynamics.", deliverable: "Strategic business plan and governance playbook." },
-            { name: "Revenue Development & Financial Management", desc: "Digital monetisation, premium ticketing, sponsorship maximisation, and squad financial planning. Financial frameworks aligning commercial ambition with operational reality.", deliverable: "Financial plan with cash-flow optimisation roadmap." },
-            { name: "Squad Planning & Recruitment Strategy", desc: "Data-driven perspective on squad building — player valuation, transfer market strategy, and multi-club ownership (MCO) pathway structuring.", deliverable: "Recruitment strategy report and transfer market analysis." },
-            { name: "Academy Development & Geostrategies", desc: "Comprehensive academy blueprints — facility planning, talent identification frameworks, and regional scouting strategies. Sustainable grassroots infrastructure for clubs and investors.", deliverable: "Academy development blueprint with geographic scouting strategy." }
+            { name: "Asset Evaluation", desc: "Commercial, operational, and financial assessments of assets — including brand value analysis, audience engagement metrics, partnership ecosystem mapping, and financial sustainability benchmarking.", deliverable: "Investment evaluation report and comparative benchmarking dashboard." },
+            { name: "Business Strategy", desc: "Governance, long-term planning, joint ventures, and restructuring for organisations. Practical, implementable, and grounded in real-world market dynamics.", deliverable: "Strategic business plan and governance playbook." },
+            { name: "Revenue Development & Financial Management", desc: "Digital monetisation, premium offerings, partnership maximisation, and operational financial planning. Financial frameworks aligning commercial ambition with operational reality.", deliverable: "Financial plan with cash-flow optimisation roadmap." },
+            { name: "Workforce Planning & Recruitment Strategy", desc: "Data-driven perspective on team building — talent valuation, market strategy, and multi-entity ownership pathway structuring.", deliverable: "Recruitment strategy report and transfer market analysis." },
+            { name: "Academy Development & Geostrategies", desc: "Comprehensive academy blueprints — facility planning, talent identification frameworks, and regional scouting strategies. Sustainable grassroots infrastructure for organisations and investors.", deliverable: "Academy development blueprint with geographic scouting strategy." }
         ],
         also: {
             title: "International Youth Events & Workshops",
-            desc: "We design and deliver international youth events — talent showcases, draft events, and technification programmes — alongside professional workshops for coaches, administrators, and sports executives.",
+            desc: "We design and deliver international youth events — talent showcases, selection events, and skills programmes — alongside professional workshops for trainers, administrators, and executives.",
             deliverable: "Event execution plan and workshop curriculum."
         }
     },
@@ -119,54 +119,55 @@ const VerticalsPage = () => {
     return (
         <>
             {/* Hero – 50vh, filled gaps with background colour */}
-          
-<section
-    style={{
-        position: 'relative',
-        height: '50vh',
-        minHeight: '320px',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        // backgroundColor removed — image will now cover fully
-    }}
->
-    <img
-        src={VerticalsBG}
-        alt="Long-exposure city lights at night"
-        style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',  // ← changed from 'contain'
-            zIndex: 1,
-        }}
-    />
-    <div
-        style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            zIndex: 2,
-        }}
-    />
-    <div
-        style={{
-            position: 'relative',
-            zIndex: 3,
-            padding: '60px 40px',
-        }}
-    >
-        <span className="overline" style={{ color: 'var(--gold-light)' }}>Our Verticals</span>
-        <h1 className="h1-display on-dark">Four Disciplines.<br /><em>One Philosophy.</em></h1>
-        <p className="body-copy light" style={{ maxWidth: '600px', marginTop: '16px' }}>
-            Abdulla Capital is structured around four specialised verticals, each operating with distinct expertise but sharing a unified foundation: disciplined capital, deep relationships, and long-term orientation.
-        </p>
-    </div>
-</section>
+
+            <section
+                style={{
+                    position: 'relative',
+                    height: '50vh',
+                    minHeight: '320px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                    // backgroundColor removed — image will now cover fully
+                }}
+            >
+                <img
+                    src={VerticalsBG}
+                    alt="Long-exposure city lights at night"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',  // ← changed from 'contain'
+                        zIndex: 1,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                        zIndex: 2,
+                    }}
+                />
+                <div
+                    style={{
+                        position: 'relative',
+                        zIndex: 3,
+                        padding: '60px 40px',
+                    }}
+                >
+                    <span className="overline" style={{ color: 'var(--gold-light)' }}>Our Verticals</span>
+                    <h1 className="h1-display on-dark">Four Disciplines.<br /><em>One Philosophy.</em></h1>
+                    <div style={{ width: '50px', height: '2px', background: 'var(--gold)', marginTop: '20px' }}></div>
+                    <p className="body-copy light" style={{ maxWidth: '600px', marginTop: '16px' }}>
+                        Abdulla Capital is structured around four specialised verticals, each operating with distinct expertise but sharing a unified foundation: disciplined capital, deep relationships, and long-term orientation.
+                    </p>
+                </div>
+            </section>
 
             {/* Sticky Tab Navigation */}
             <div style={{
