@@ -86,7 +86,7 @@ const CookiePolicyPage = () => {
                     </div>
                     <div>
                         <strong style={{ color: 'var(--navy)' }}>Contact</strong><br />
-                        privacy@abdullacapital.com <span style={{ color: 'var(--mid-gray)' }}>[to be confirmed]</span>
+                        info@abdullacapital.com <span style={{ color: 'var(--mid-gray)' }}></span>
                     </div>
                 </div>
             </div>

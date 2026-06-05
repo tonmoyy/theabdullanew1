@@ -27,7 +27,7 @@ const verticals = [
     {
         id: "advisory",
         number: "02",
-        title: "Advisory",
+        title: "M&A Advisory",
         tagline: "The best advice is not what clients want to hear — it is what they need to know.",
         intro: "Our M&A Advisory vertical is a specialist M&A and strategic consulting practice, with focus on the multiple industries. We advise ventures and investors on the full lifecycle of any transaction — from initial valuation and mandate origination through to deal closure and post-transaction integration",
         services: [
@@ -87,7 +87,7 @@ const verticals = [
             { name: "Classic & Exotic Automobiles", desc: "Investment-grade vehicles, racing provenance, limited editions" },
             { name: "Private Aviation", desc: "Jet acquisition, fractional ownership, and sale-leaseback structures" },
             { name: "Superyachts", desc: "Purchase, financing, and structured disposition" },
-            { name: "Prime Real Estate", desc: "Trophy residential, luxury commercial, and hospitality assets" }
+
         ]
     }
 ];
@@ -254,7 +254,7 @@ const VerticalsPage = () => {
                 {activeTab === 'advisory' && (
                     <>
                         <section className="dark-band" style={{ padding: '50px 40px' }}>
-                            <span className="tag" style={{ borderColor: 'var(--gold)', color: 'var(--gold)' }}>02 — Advisory</span>
+                            <span className="tag" style={{ borderColor: 'var(--gold)', color: 'var(--gold)' }}>02 — M&A Advisory</span>
                             <h2 className="h2-section" style={{ color: 'var(--white)', margin: '16px 0 12px' }}>{currentVertical.tagline}</h2>
                             <p className="body-copy light" style={{ maxWidth: '680px' }}>{currentVertical.intro}</p>
                         </section>

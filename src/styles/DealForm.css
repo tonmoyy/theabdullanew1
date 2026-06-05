@@ -1,0 +1,785 @@
+/* =========================================
+   Multi‑step Deal Submission Form – Full Styles
+   ========================================= */
+
+/* --- CSS Variables --- */
+:root {
+    --navy: #0a1628;
+    --navy-2: #111d33;
+    --dark: #111820;
+    --gold: #b8986a;
+    --gold-light: #d4b483;
+    --gold-soft: #f0e6d6;
+    --cream: #f5f0e8;
+    --paper: #faf7f2;
+    --white: #fff;
+    --mid: #8a9099;
+    --line: #e3ddd3;
+    --line-soft: #eee9e0;
+    --text: #1e2535;
+    --text-light: #4a5568;
+    --err: #c0392b;
+    --ok: #3a7d44;
+    --warn: #a8762f;
+
+    --mid-gray: #8a9099;
+    --light-gray: #e3ddd3;
+    --border: #e3ddd3;
+    --section-bg: #faf7f2;
+}
+
+/* --- Base form container --- */
+.form-body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.6;
+    print-color-adjust: exact;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px 30px 30px;
+    background: var(--white);
+}
+
+/* --- Step container --- */
+.fs {
+    display: none;
+}
+.fs.active {
+    display: block;
+    animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==============================================
+   SECTION BAR — navy blue header strip
+   ============================================== */
+.sec-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 14px 20px;
+    background: var(--navy);              /* ← navy blue background */
+    border-radius: 3px;
+}
+.sec-step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);             /* gold circle on navy */
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.sec-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);                 /* white text on navy */
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* --- Inner section padding --- */
+.sec-inner {
+    padding: 0 0 8px;
+}
+.sec-lead {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.87rem;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+.req-key {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* ==============================================
+   ROW layout
+   ============================================== */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* ==============================================
+   FIELD WRAPPER — white background, clean border
+   Label + hint sit above the input box
+   ============================================== */
+.fieldwrap {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);            /* whole block = white */
+    border: none;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+.fieldwrap.full {
+    grid-column: 1 / -1;
+}
+
+/* Label */
+.flabel {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+.star {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* Hint text */
+.hint {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    color: var(--mid);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* ==============================================
+   THE INPUT / SELECT / TEXTAREA
+   — the INPUT BOX ITSELF gets the cream bg + border
+   ============================================== */
+.fld {
+    width: 100%;
+    border: 1px solid var(--line);       /* warm border around input */
+    border-radius: 2px;
+    background: var(--paper);            /* ← cream/paper tint on input only */
+    padding: 9px 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    box-sizing: border-box;
+}
+.fld:focus {
+    border-color: var(--gold);
+    background: var(--cream);
+}
+.fld::placeholder {
+    color: var(--mid);
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+textarea.fld {
+    resize: vertical;
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+select.fld {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath fill='none' stroke='%23b8986a' stroke-width='1.5' d='M1 1l4.5 4.5L10 1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-color: var(--paper);
+    padding-right: 30px;
+}
+select.fld:focus {
+    background-color: var(--cream);
+}
+
+/* Error state on the fieldwrap — red border on the .fld inside */
+.fieldwrap:not(.valid) .fld {
+    border-color: var(--err);
+    background: #fdf5f4;
+}
+
+/* Error message */
+.errmsg {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    color: var(--err);
+    margin-top: 5px;
+    display: none;
+    line-height: 1.3;
+}
+.fieldwrap:not(.valid) .errmsg {
+    display: block;
+}
+
+/* Character count */
+.charcount {
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.63rem;
+    color: var(--mid);
+    margin-top: 3px;
+}
+
+/* ==============================================
+   Financials table
+   ============================================== */
+.fin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.fin-table th {
+    text-align: left;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--navy);             /* navy header row */
+    border-bottom: 1px solid var(--line);
+    padding: 9px 12px;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+.fin-table th:first-child {
+    width: 90px;
+}
+.fin-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--white);
+}
+.fin-table tr:last-child td {
+    border-bottom: none;
+}
+.fin-table tr:nth-child(even) td {
+    background: var(--paper);
+}
+.fin-table td.yr {
+    font-weight: 600;
+    font-size: 0.76rem;
+    color: var(--navy);
+    padding-left: 12px;
+    letter-spacing: 0.04em;
+}
+.fin-table input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 5px 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.86rem;
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box;
+}
+.fin-table input[type="text"]:focus {
+    background: var(--cream);
+    border-radius: 2px;
+    outline: 1px solid var(--gold);
+}
+.fin-table input[type="text"]::placeholder {
+    color: var(--mid);
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+/* ==============================================
+   Navigation footer
+   ============================================== */
+.fnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.confnote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    color: var(--mid);
+    max-width: 260px;
+    line-height: 1.5;
+}
+
+/* ==============================================
+   Buttons
+   ============================================== */
+.form-body .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 11px 24px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1;
+}
+.form-body .btn-next {
+    background: var(--navy);
+    color: var(--white);
+}
+.form-body .btn-next:hover {
+    background: var(--navy-2);
+}
+.form-body .btn-back {
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--line);
+    padding: 10px 22px;
+}
+.form-body .btn-back:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+}
+.form-body .btn-submit {
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+}
+.form-body .btn-submit:hover {
+    background: var(--gold-light);
+}
+.form-body .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.form-body .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+}
+.form-body .btn-outline:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+.form-body .btn svg {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+/* ==============================================
+   Document items
+   ============================================== */
+.docnote,
+.folder-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+.req-word {
+    color: var(--err);
+    font-weight: 600;
+}
+
+.doc-item {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--white);
+    transition: border-color 0.2s, background 0.2s;
+}
+.doc-item.required {
+    border-left: 3px solid var(--navy);
+}
+.doc-item:has(.doc-cb:checked) {
+    border-color: var(--gold);
+    background: var(--paper);
+}
+.doc-item.doc-error {
+    border-color: var(--err) !important;
+    background: #fdf5f4;
+}
+
+.doc-cb {
+    margin-top: 2px;
+    accent-color: var(--navy);
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.doc-main {
+    flex: 1;
+    min-width: 0;
+}
+.doc-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+.doc-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--navy);
+}
+.doc-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 2px 7px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.doc-tag.req {
+    background: var(--navy);
+    color: var(--white);
+}
+.doc-tag.opt {
+    background: var(--line);
+    color: var(--text-light);
+}
+.doc-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    color: var(--mid);
+    line-height: 1.5;
+}
+.doc-errmsg {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    color: var(--err);
+    margin-top: 5px;
+}
+
+.doc-attach {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    flex-shrink: 0;
+}
+.attach-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    cursor: pointer;
+    border: 1px solid var(--line);
+    padding: 6px 13px;
+    border-radius: 2px;
+    background: var(--white);
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+.attach-btn:hover {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+}
+.attach-btn svg {
+    width: 13px;
+    height: 13px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+}
+.attach-btn input[type="file"] {
+    display: none;
+}
+.file-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.67rem;
+    color: var(--text-light);
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+    min-height: 1em;
+}
+
+/* ==============================================
+   Intent chips
+   ============================================== */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.18s;
+    user-select: none;
+    background: var(--white);
+}
+.chip input[type="radio"] {
+    display: none;
+}
+.chip:hover {
+    border-color: var(--gold);
+    color: var(--navy);
+    background: var(--paper);
+}
+.chip.active {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+}
+
+/* ==============================================
+   Consent checkbox
+   ============================================== */
+.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 24px 0 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+.consent input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--navy);
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.consent a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.consent a:hover {
+    border-bottom-color: var(--gold);
+}
+
+/* ==============================================
+   Success message
+   ============================================== */
+.success {
+    text-align: center;
+    padding: 40px 0;
+}
+.success-ic {
+    margin-bottom: 20px;
+}
+.success-ic svg {
+    width: 56px;
+    height: 56px;
+    stroke: var(--ok);
+    fill: none;
+    stroke-width: 1.5;
+}
+.success h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+.success p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto 8px;
+    line-height: 1.7;
+}
+
+/* Utility */
+.folder-note {
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE
+   ============================================== */
+@media (max-width: 768px) {
+    .form-body {
+        padding: 16px 18px 24px;
+    }
+    .row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    .fieldwrap.full {
+        grid-column: 1;
+    }
+    .sec-title {
+        font-size: 0.88rem;
+    }
+    .sec-bar {
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+    .sec-lead {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+    .fnav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .fnav > .btn-back { order: 2; }
+    .fnav > .btn-next,
+    .fnav > div { order: 1; }
+    .fnav > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .confnote {
+        max-width: 100%;
+        order: 2;
+    }
+    .form-body .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 20px;
+    }
+    .form-body .btn-back {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-body {
+        padding: 12px 14px 20px;
+    }
+    .fin-table {
+        font-size: 0.76rem;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .fin-table td.yr {
+        width: 64px;
+        font-size: 0.72rem;
+    }
+    .doc-item {
+        flex-wrap: wrap;
+        padding: 12px;
+    }
+    .doc-attach {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 8px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .file-name {
+        max-width: 180px;
+        text-align: left;
+    }
+    .chips { gap: 7px; }
+    .chip {
+        padding: 7px 13px;
+        font-size: 0.73rem;
+    }
+    .sec-step {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    .sec-title { font-size: 0.82rem; }
+}
+
+@media (max-width: 400px) {
+    .form-body { padding: 10px 12px 16px; }
+    .fld { font-size: 0.84rem; }
+    .form-body .btn {
+        font-size: 0.68rem;
+        padding: 12px 16px;
+        letter-spacing: 0.05em;
+    }
+    .consent { font-size: 0.72rem; }
+}
+/* Progress Indicator – Compact golden bars */
+.progress-indicator {
+    display: flex;
+    justify-content: center;  /* center the short bars */
+    gap: 8px;
+    margin: 16px 0 24px;
+}
+
+.progress-bar {
+    height: 3px;              /* keep thin */
+    width: 30px;              /* short fixed width */
+    flex: none;               /* prevent stretching */
+    background-color: var(--line);
+    border-radius: 1.5px;
+    transition: background-color 0.3s ease;
+}
+
+.progress-bar.filled,
+.progress-bar.active {
+    background-color: var(--gold);
+}
+
+.progress-bar.active {
+    box-shadow: 0 0 4px var(--gold-light);
+}

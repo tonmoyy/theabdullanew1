@@ -146,21 +146,18 @@ const PhilosophyPage = () => {
                 </div>
                 <div className="layout-3col">
                     <div className="col-block" style={{ borderRight: '1px solid var(--border)', textAlign: 'center' }}>
-                        <div style={{ fontSize: '32px', marginBottom: '12px' }}>📈</div>
                         <div className="h3-sub">Private Markets</div>
                         <p className="body-copy" style={{ fontSize: '12.5px' }}>
                             Growth-stage private companies, cross-border M&A, and co-investment opportunities with institutional partners.
                         </p>
                     </div>
                     <div className="col-block" style={{ borderRight: '1px solid var(--border)', textAlign: 'center' }}>
-                        <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏛️</div>
                         <div className="h3-sub">Family Wealth</div>
                         <p className="body-copy" style={{ fontSize: '12.5px' }}>
                             Multigenerational wealth structuring, estate planning, and the institutional management of private family capital.
                         </p>
                     </div>
                     <div className="col-block" style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '32px', marginBottom: '12px' }}>💎</div>
                         <div className="h3-sub">Luxury Assets</div>
                         <p className="body-copy" style={{ fontSize: '12.5px' }}>
                             Tangible and investment-grade luxury assets where value requires expert understanding and specialist financing structures.

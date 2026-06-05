@@ -152,7 +152,7 @@ const Footer = () => {
                     <Link to="/disclaimer">Disclaimer</Link>
                     <Link to="/privacy-policy">Privacy Policy</Link>
                     <Link to="/cookie-policy">Cookie Policy</Link>
-                    <Link to="/cookie-settings">Cookie Settings</Link>
+
                 </div>
             </div>
         </>

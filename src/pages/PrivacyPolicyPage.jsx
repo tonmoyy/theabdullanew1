@@ -32,14 +32,14 @@ const PrivacyPolicyPage = () => {
             <div style={{ padding: '30px' }}>
                 <span className="overline">Legal</span>
                 <h2 className="h2-section">Privacy Policy</h2>
-                <p style={{ fontSize: '11px', color: 'var(--mid-gray)', margin: '6px 0 20px' }}>Last updated: [Date — to be inserted before publishing]</p>
+
                 <p className="body-copy">Abdulla Capital is committed to protecting the privacy and personal data of individuals who interact with this website or with our firm.</p>
                 <hr className="gold-line" />
 
                 <div style={{ display: 'grid', gap: '20px', fontSize: '12.5px', color: '#4a5568', lineHeight: 1.8, marginTop: '20px' }}>
                     <div>
                         <strong style={{ color: 'var(--navy)' }}>1. Who We Are</strong><br />
-                        Abdulla Capital is the data controller in respect of personal data collected through this website. <span style={{ fontStyle: 'italic', color: '#8a7000' }}>[Registered address and company number to be confirmed.]</span>
+                        Abdulla Capital is the data controller in respect of personal data collected through this website. <span style={{ fontStyle: 'italic', color: '#8a7000' }}></span>
                     </div>
                     <div>
                         <strong style={{ color: 'var(--navy)' }}>2. Data We Collect</strong><br />

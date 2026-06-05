@@ -63,7 +63,7 @@ const DisclaimerPage = () => {
                         To the fullest extent permitted by law, Abdulla Capital, its principals, employees, contractors, and advisors shall not be liable for any loss or damage arising from reliance on website content.
                     </div>
                     <div style={{ background: 'var(--section-bg)', border: '1px solid var(--border)', padding: '16px' }}>
-                        <strong style={{ color: 'var(--navy)' }}>Legal Enquiries:</strong> legal@abdullacapital.com <span style={{ color: 'var(--mid-gray)' }}>[to be confirmed]</span>
+                        <strong style={{ color: 'var(--navy)' }}>Legal Enquiries:</strong> info@abdullacapital.com <span style={{ color: 'var(--mid-gray)' }}></span>
                     </div>
                 </div>
             </div>
