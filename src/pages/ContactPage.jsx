@@ -378,15 +378,20 @@ const ContactPage = () => {
                     We work with the <em>committed</em>,<br />not the curious.
                 </h1>
                 <div style={{ width: 50, height: 2, background: 'var(--gold)', marginBottom: 24 }}></div>
-                <div style={{ maxWidth: 700, color: '#fff', fontSize: 14, lineHeight: 1.7 }}>
-                    <p style={{ marginBottom: 16 }}>
+                <div style={{ maxWidth: 700, fontSize: 14, lineHeight: 1.7 }}>
+                    {/* Dim white paragraphs */}
+                    <p style={{ marginBottom: 16, color: 'rgba(255,255,255,0.7)' }}>
                         Abdulla Capital is a selective firm. We commit our time, our network, and the full depth of our expertise to a limited number of mandates — and that selectivity begins here. We are not seeking window‑shoppers or speculative enquiries; we are seeking principals, founders, and partners who are genuinely committed to one of the disciplines we practise.
                     </p>
-                    <p style={{ marginBottom: 16 }}>
+                    <p style={{ marginBottom: 16, color: 'rgba(255,255,255,0.7)' }}>
                         If you are serious about working with us — whether in private equity, M&amp;A advisory, family office, or luxury finance — we ask that you complete the form below in full. The detail you provide is not a formality. It is how we assess fit, prepare properly, and respond with substance rather than a holding reply.
                     </p>
-                    <p style={{ marginBottom: 0 }}>
-                        <strong>Complete the form, and our team will review your submission and respond within five business days where there is a fit.</strong> Every enquiry is treated in the strictest confidence.
+                    {/* Third paragraph with bold bright white call-to-action */}
+                    <p style={{ marginBottom: 0, color: 'rgba(255,255,255,0.7)' }}>
+                        <strong style={{ color: '#ffffff', fontWeight: 600 }}>
+                            Complete the form, and our team will review your submission and respond within five business days where there is a fit.
+                        </strong>{' '}
+                        Every enquiry is treated in the strictest confidence.
                     </p>
                 </div>
             </div>
