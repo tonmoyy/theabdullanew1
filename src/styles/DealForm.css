@@ -651,7 +651,7 @@ select.fld:focus {
 }
 
 /* ==============================================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE (clean, single block)
    ============================================== */
 @media (max-width: 768px) {
     .form-body {
@@ -758,28 +758,161 @@ select.fld:focus {
     }
     .consent { font-size: 0.72rem; }
 }
+
 /* Progress Indicator – Compact golden bars */
 .progress-indicator {
     display: flex;
-    justify-content: center;  /* center the short bars */
+    justify-content: center;
     gap: 8px;
     margin: 16px 0 24px;
 }
-
 .progress-bar {
-    height: 3px;              /* keep thin */
-    width: 30px;              /* short fixed width */
-    flex: none;               /* prevent stretching */
+    height: 3px;
+    width: 30px;
+    flex: none;
     background-color: var(--line);
     border-radius: 1.5px;
     transition: background-color 0.3s ease;
 }
-
 .progress-bar.filled,
 .progress-bar.active {
     background-color: var(--gold);
 }
-
 .progress-bar.active {
     box-shadow: 0 0 4px var(--gold-light);
+}
+
+/* ==================================================================
+   FULL RESPONSIVE OVERRIDE – works at all breakpoints
+   ================================================================== */
+
+/* Default desktop padding for the two layout columns */
+.contact-left-col,
+.contact-right-col {
+    padding: 40px;
+    min-width: 0;               /* ← allow shrinking below content width */
+}
+
+/* Outer grid */
+.contact-mobile-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+/* ---------- TABLET & SMALLER (≤ 768px) ---------- */
+@media (max-width: 768px) {
+    /* Stack the two columns */
+    .contact-mobile-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Allow columns to shrink and prevent horizontal overflow */
+    .contact-left-col,
+    .contact-right-col {
+        min-width: 0 !important;
+        overflow-x: hidden;
+    }
+
+    /* Remove the vertical divider */
+    .contact-left-col {
+        border-right: none !important;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    /* Reduce padding */
+    .contact-left-col,
+    .contact-right-col {
+        padding: 24px 20px !important;
+    }
+
+    .form-body {
+        padding: 16px 14px 24px !important;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;      /* safety */
+    }
+
+    /* Make sure all inputs fit their container */
+    .fld,
+    select.fld,
+    textarea.fld,
+    .fin-table input[type="text"],
+    .fin-table input[type="number"],
+    .fin-table input[type="tel"],
+    .fin-table input[type="url"],
+    .fin-table input[type="email"] {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Force form rows to single column */
+    .row {
+        grid-template-columns: 1fr !important;
+    }
+    .fieldwrap.full {
+        grid-column: 1 !important;
+    }
+
+    /* Financial table: scrollable, doesn't force parent width */
+    .fin-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+    }
+    .fin-table table {
+        min-width: 600px;   /* give it enough room to scroll */
+    }
+
+    /* Buttons full width, navigation stacked */
+    .form-body .btn {
+        width: 100% !important;
+        justify-content: center;
+    }
+    .fnav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .fnav .btn-back {
+        order: 2;
+    }
+    .fnav .btn-next,
+    .fnav > div {
+        order: 1;
+    }
+    .fnav > div {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .confnote {
+        max-width: 100%;
+    }
+}
+
+/* ---------- SMALL PHONES (≤ 480px) ---------- */
+@media (max-width: 480px) {
+    .contact-left-col,
+    .contact-right-col {
+        padding: 16px 12px !important;
+    }
+
+    .form-body {
+        padding: 12px 10px 20px !important;
+    }
+
+    .sec-bar {
+        padding: 12px 12px;
+    }
+
+    .sec-title {
+        font-size: 0.82rem;
+    }
+    .sec-step {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
 }

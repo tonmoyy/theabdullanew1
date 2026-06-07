@@ -4,7 +4,7 @@ import ContactBG from '../assets/images/Contact Page.jpg';
 import '../styles/DealForm.css';
 
 /* ================================================================== */
-/*   Top‑level components & data (moved outside ContactPage)           */
+/*   Top‑level components & data                                      */
 /* ================================================================== */
 
 const ArrowSvg = () => (
@@ -219,7 +219,6 @@ const ContactPage = () => {
     const [errors, setErrors] = useState({});
     const [submitted, setSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    // Track the highest step reached (for filling progress bars)
     const [completedSteps, setCompletedSteps] = useState(0);
 
     const handleChange = e => {
@@ -296,7 +295,6 @@ const ContactPage = () => {
         const newStep = step + 1;
         if (newStep < TOTAL_STEPS) {
             setStep(newStep);
-            // Update completed steps (highest step successfully reached)
             setCompletedSteps(prev => Math.max(prev, newStep));
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -360,16 +358,49 @@ const ContactPage = () => {
                 </div>
             </section>
 
+            {/* ───── PREVIEW SECTION (after hero, matching hero overline style) ───── */}
+            <div className="preview-section"
+                 style={{
+                     background: 'var(--navy)',
+                     color: '#fff',
+                     fontFamily: "'Montserrat', sans-serif",
+                     fontWeight: 300,
+                     lineHeight: 1.7,
+                     padding: '46px 50px',
+                     position: 'relative',
+                     overflow: 'hidden',
+                     boxSizing: 'border-box',
+                 }}
+            >
+                {/* Overline – same class and color as hero */}
+                <span className="overline" style={{ color: 'var(--gold-light)' }}>Begin a Conversation</span>
+                <h1 className="h1-display on-dark" style={{ maxWidth: 600, marginTop: 20, marginBottom: 24 }}>
+                    We work with the <em>committed</em>,<br />not the curious.
+                </h1>
+                <div style={{ width: 50, height: 2, background: 'var(--gold)', marginBottom: 24 }}></div>
+                <div style={{ maxWidth: 700, color: '#fff', fontSize: 14, lineHeight: 1.7 }}>
+                    <p style={{ marginBottom: 16 }}>
+                        Abdulla Capital is a selective firm. We commit our time, our network, and the full depth of our expertise to a limited number of mandates — and that selectivity begins here. We are not seeking window‑shoppers or speculative enquiries; we are seeking principals, founders, and partners who are genuinely committed to one of the disciplines we practise.
+                    </p>
+                    <p style={{ marginBottom: 16 }}>
+                        If you are serious about working with us — whether in private equity, M&amp;A advisory, family office, or luxury finance — we ask that you complete the form below in full. The detail you provide is not a formality. It is how we assess fit, prepare properly, and respond with substance rather than a holding reply.
+                    </p>
+                    <p style={{ marginBottom: 0 }}>
+                        <strong>Complete the form, and our team will review your submission and respond within five business days where there is a fit.</strong> Every enquiry is treated in the strictest confidence.
+                    </p>
+                </div>
+            </div>
+
             {/* Contact Form + Details */}
             <section style={{ padding: 0 }}>
-                <div className="layout-split" style={{ gridTemplateColumns: '3fr 2fr', gap: 0, border: '1px solid var(--light-gray)', alignItems: 'start' }}>
+                {/* ─── NOTE the class "contact-mobile-grid" (no inline gridTemplateColumns) ─── */}
+                <div className="layout-split contact-mobile-grid" style={{ gap: 0, border: '1px solid var(--light-gray)', alignItems: 'start' }}>
                     {/* LEFT – Multi‑step form */}
-                    <div style={{ padding: 40, borderRight: '1px solid var(--light-gray)' }}>
+                    <div className="contact-left-col" style={{ borderRight: '1px solid var(--light-gray)' }}>
                         <span className="overline">Submit a Deal</span>
 
                         {!submitted ? (
                             <>
-                                {/* Progress indicator (golden bars) placed above the form */}
                                 <ProgressIndicator currentStep={step} totalSteps={TOTAL_STEPS} />
                                 <form className="form-body" id="dealForm" noValidate onSubmit={e => e.preventDefault()}>
                                     {/* STEP 1 */}
@@ -544,7 +575,7 @@ const ContactPage = () => {
                     </div>
 
                     {/* RIGHT – Contact Details (unchanged) */}
-                    <div style={{ padding: 40 }}>
+                    <div className="contact-right-col">
                         <span className="overline">Contact Details</span>
                         <div className="commitment-row" style={{ borderBottom: '1px solid var(--light-gray)', padding: '14px 0', gridTemplateColumns: '130px 1fr' }}>
                             <div className="label">General Enquiries</div>
@@ -554,13 +585,12 @@ const ContactPage = () => {
                         </div>
                         <div className="commitment-row" style={{ borderBottom: '1px solid var(--light-gray)', padding: '14px 0', gridTemplateColumns: '130px 1fr' }}>
                             <div className="label">LinkedIn</div>
-                            <div style={{ fontSize: '12.5px', color: '#3a4250' }}><a>https://www.linkedin.com/company/abdullacapital/</a></div>
+                            <div style={{ fontSize: '12.5px', color: '#3a4250' }}><a href="https://www.linkedin.com/company/abdullacapital/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/company/abdullacapital/</a></div>
                         </div>
                         <div className="commitment-row" style={{ borderBottom: '1px solid var(--light-gray)', padding: '14px 0', gridTemplateColumns: '130px 1fr' }}>
                             <div className="label">Registered Office</div>
                             <div style={{ fontSize: '12.5px', color: '#3a4250' }}>United Arab Emirates</div>
                         </div>
-
                         <div style={{ background: 'var(--section-bg)', border: '1px solid var(--border)', padding: 20, marginTop: 24 }}>
                             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--navy)', marginBottom: 8, fontFamily: "'Montserrat', sans-serif" }}>
                                 Response Commitment
