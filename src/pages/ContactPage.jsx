@@ -344,49 +344,40 @@ const ContactPage = () => {
 
     return (
         <>
-            {/* Hero (unchanged) */}
+            {/* ───── HERO SECTION WITH BACKGROUND IMAGE ───── */}
             <section style={{ position: 'relative', height: '50vh', minHeight: 320, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
                 <img src={ContactBG} alt="Contact background" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }} />
                 <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 2 }} />
-                <div style={{ position: 'relative', zIndex: 3, padding: '60px 40px' }}>
-                    <span className="overline" style={{ color: 'var(--gold-light)' }}>Contact</span>
-                    <h1 className="h1-display on-dark" style={{ maxWidth: 600 }}>We respond to<br /><em>every serious enquiry.</em></h1>
-                    <div style={{ width: 50, height: 2, background: 'var(--gold)', marginTop: 20 }} />
-                    <p className="body-copy light" style={{ maxWidth: 500, marginTop: 16 }}>
-                        Whether you are seeking advisory support, exploring an investment opportunity, or simply wish to introduce yourself — we welcome the conversation. All enquiries are acknowledged within two business days.
-                    </p>
+                <div style={{ position: 'relative', zIndex: 3, padding: '60px 40px', maxWidth: '800px' }}>
+                    <span className="overline" style={{ color: 'var(--gold-light)' }}>Begin a Conversation</span>
+                    <h1 className="h1-display on-dark" style={{ maxWidth: 600 }}>We work with the <em>committed</em>,<br />not the curious.</h1>
+                    <div style={{ width: 50, height: 2, background: 'var(--gold)', marginTop: 20, marginBottom: 24 }} />
+                    {/* No paragraphs here – only the heading and divider */}
                 </div>
             </section>
 
-            {/* ───── PREVIEW SECTION (after hero, matching hero overline style) ───── */}
-            <div className="preview-section"
-                 style={{
-                     background: 'var(--navy)',
-                     color: '#fff',
-                     fontFamily: "'Montserrat', sans-serif",
-                     fontWeight: 300,
-                     lineHeight: 1.7,
-                     padding: '46px 50px',
-                     position: 'relative',
-                     overflow: 'hidden',
-                     boxSizing: 'border-box',
-                 }}
+            {/* ───── NAVY SECTION WITH REMAINING TEXT ───── */}
+            <div
+                className="preview-section"
+                style={{
+                    background: 'var(--navy)',
+                    color: '#fff',
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 300,
+                    lineHeight: 1.7,
+                    padding: '46px 50px',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    boxSizing: 'border-box',
+                }}
             >
-                {/* Overline – same class and color as hero */}
-                <span className="overline" style={{ color: 'var(--gold-light)' }}>Begin a Conversation</span>
-                <h1 className="h1-display on-dark" style={{ maxWidth: 600, marginTop: 20, marginBottom: 24 }}>
-                    We work with the <em>committed</em>,<br />not the curious.
-                </h1>
-                <div style={{ width: 50, height: 2, background: 'var(--gold)', marginBottom: 24 }}></div>
-                <div style={{ maxWidth: 700, fontSize: 14, lineHeight: 1.7 }}>
-                    {/* Dim white paragraphs */}
+                <div style={{ maxWidth: 700, fontSize: 14, lineHeight: 1.7, marginTop: 20 }}>
                     <p style={{ marginBottom: 16, color: 'rgba(255,255,255,0.7)' }}>
                         Abdulla Capital is a selective firm. We commit our time, our network, and the full depth of our expertise to a limited number of mandates — and that selectivity begins here. We are not seeking window‑shoppers or speculative enquiries; we are seeking principals, founders, and partners who are genuinely committed to one of the disciplines we practise.
                     </p>
                     <p style={{ marginBottom: 16, color: 'rgba(255,255,255,0.7)' }}>
                         If you are serious about working with us — whether in private equity, M&amp;A advisory, family office, or luxury finance — we ask that you complete the form below in full. The detail you provide is not a formality. It is how we assess fit, prepare properly, and respond with substance rather than a holding reply.
                     </p>
-                    {/* Third paragraph with bold bright white call-to-action */}
                     <p style={{ marginBottom: 0, color: 'rgba(255,255,255,0.7)' }}>
                         <strong style={{ color: '#ffffff', fontWeight: 600 }}>
                             Complete the form, and our team will review your submission and respond within five business days where there is a fit.
@@ -398,7 +389,6 @@ const ContactPage = () => {
 
             {/* Contact Form + Details */}
             <section style={{ padding: 0 }}>
-                {/* ─── NOTE the class "contact-mobile-grid" (no inline gridTemplateColumns) ─── */}
                 <div className="layout-split contact-mobile-grid" style={{ gap: 0, border: '1px solid var(--light-gray)', alignItems: 'start' }}>
                     {/* LEFT – Multi‑step form */}
                     <div className="contact-left-col" style={{ borderRight: '1px solid var(--light-gray)' }}>
@@ -408,6 +398,7 @@ const ContactPage = () => {
                             <>
                                 <ProgressIndicator currentStep={step} totalSteps={TOTAL_STEPS} />
                                 <form className="form-body" id="dealForm" noValidate onSubmit={e => e.preventDefault()}>
+                                    {/* ... all step content remains unchanged ... */}
                                     {/* STEP 1 */}
                                     {step === 0 && (
                                         <div className="fs active" data-step="0">
