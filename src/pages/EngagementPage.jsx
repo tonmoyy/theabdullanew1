@@ -1,7 +1,7 @@
 // src/pages/EngagementPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import EnagagementBG from '../assets/images/5 Engagement Page BG  Resolution.jpg';
+import EnagagementBG from '../assets/images/5 engagemnet page.jpg.jpeg';
 
 const EngagementPage = () => {
     return (
@@ -28,7 +28,7 @@ const EngagementPage = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        objectFit: 'contain',
+                        objectFit: 'cover',
                         zIndex: 1,
                     }}
                 />
