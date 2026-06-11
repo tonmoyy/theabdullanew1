@@ -106,17 +106,18 @@ const AboutPage = () => {
                     Part of a Broader Platform
                 </h2>
                 <p className="body-copy light" style={{ maxWidth: '680px' }}>
-                    Abdulla Capital operates as the principal M&A Advisory and investment arm within a broader holding group. The group's interests span real estate, sports assets, commercial ventures, and family investments across multiple markets.
+                    Abdulla Capital operates as the principal M&A Advisory and investment arm within a broader holding group. The group's interests span dedicated sports, real estate, private equity, and luxury asset funds across multiple markets.
                 </p>
                 <p className="body-copy light" style={{ maxWidth: '680px', marginTop: '12px' }}>
                     This positioning gives our clients a rare advantage: access not just to our M&A Advisory services, but to a network of affiliated principals, investment relationships, and market intelligence that most standalone firms cannot offer.
                 </p>
 
-                <div className="layout-4col" style={{ marginTop: '36px', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                <div className="layout-4col" style={{ marginTop: '36px', gridTemplateColumns: 'repeat(4, 1fr)' }}>
                     {[
-                        { icon: '', title: 'Real Estate', desc: 'Trophy assets across primary markets' },
-                        { icon: '', title: 'Commercial Ventures', desc: 'Diversified business interests and partnerships' },
-                        { icon: '', title: 'Family Investments', desc: 'Multi‑generational capital across asset classes' },
+                        { icon: '', title: 'Sports Fund', desc: 'Investment across clubs, rights, and sporting assets' },
+                        { icon: '', title: 'Real Estate Fund', desc: 'Trophy and income assets across primary markets' },
+                        { icon: '', title: 'Private Equity Fund ', desc: ' Growth and buyout capital for operating businesses' },
+                        { icon: '', title: 'Luxury Assets Fund', desc: 'Investment-grade tangible assets across classes' }
                     ].map((item, idx) => (
                         <div key={idx} style={{
                             background: 'rgba(255,255,255,0.06)',
