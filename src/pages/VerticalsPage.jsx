@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import PrivateEquity1 from '../assets/images/PrivateEquity-1.jpg';
 import VerticalsBG from '../assets/images/3 Verticals Page BG Resolution.jpg';
 import FamilyOffice from '../assets/images/3.2 Family Office Left Side Picture.jpg';
-import LuxuryFinance from '../assets/images/Luxury Finance Right Side Picture.jpg';
+import LuxuryFinance from '../assets/images/3.2 Luxury Finance Right Side Picture.jpg';
 
 const verticals = [
     {
@@ -31,21 +31,19 @@ const verticals = [
         tagline: "The best advice is not what clients want to hear — it is what they need to know.",
         intro: "Our M&A Advisory vertical is a specialist M&A and strategic consulting practice, with focus on the multiple industries. We advise ventures and investors on the full lifecycle of any transaction — from initial valuation and mandate origination through to deal closure and post-transaction integration",
         services: [
-            { name: "Valuation of Entities", desc: "Independent, rigorous valuations of clubs, academies, manufacturers, and adjacent businesses. Methodologies: DCF, Comparable Market Multiples, Revenue-per-Member benchmarking, and Partnership Value analysis.", deliverable: "Independent valuation report — board-ready and investor-grade." },
+            { name: "Valuation of Entities", desc: "We provide independent, rigorous valuations of companies and operating businesses across every stage and sector, applying institutional methodologies — including Discounted Cash Flow (DCF), Comparable Market Multiples, precedent-transaction analysis, and asset-based and earnings-based approaches — to arrive at a defensible, well-evidenced view of value. The result is an independent valuation report that is board-ready and investor-grade", deliverable: "Independent valuation report — board-ready and investor-grade." },
             { name: "Sell-Side Advisory", desc: "We represent entities seeking to attract investors, sell a majority stake, or structure a joint venture. Full process: Information Memorandum, financial modelling, investor pitch deck, data room preparation, and targeted investor outreach.", deliverable: "End-to-end transaction management until closure." },
             { name: "Buy-Side Advisory", desc: "We represent investors, PE/VC funds, and high-net-worth individuals seeking to acquire businesses. Target identification, screening, financial due diligence, negotiation, and deal structuring.", deliverable: "Curated target shortlist and full acquisition support." },
-            { name: "Sector-Specific Due Diligence", desc: "Contract review (talent, partnership, vendor), regulatory compliance, and financial health analysis across all revenue streams — admissions, broadcasting, partnerships, and merchandising.", deliverable: "Due diligence report with red-flag summary and risk assessment." },
+            { name: "Sector-Specific Due Diligence", desc: "We conduct thorough due diligence on businesses ahead of any investment or acquisition, examining financial health, commercial performance, legal and regulatory standing, contractual obligations, and operational risk across every revenue stream. Our findings are consolidated into a clear due diligence report with a red-flag summary and full risk assessment, so you can proceed — or walk away — with complete confidence.", deliverable: "Due diligence report with red-flag summary and risk assessment." },
             { name: "Data Room Setup & Management", desc: "We build and manage secure, investor-ready virtual data rooms using institutional-grade platforms — structured for clarity, completeness, and full transparency.", deliverable: "Fully organised virtual data room, audit-ready." },
             { name: "Asset Evaluation", desc: "Commercial, operational, and financial assessments of assets — including brand value analysis, audience engagement metrics, partnership ecosystem mapping, and financial sustainability benchmarking.", deliverable: "Investment evaluation report and comparative benchmarking dashboard." },
             { name: "Business Strategy", desc: "Governance, long-term planning, joint ventures, and restructuring for organisations. Practical, implementable, and grounded in real-world market dynamics.", deliverable: "Strategic business plan and governance playbook." },
-            { name: "Revenue Development & Financial Management", desc: "Digital monetisation, premium offerings, partnership maximisation, and operational financial planning. Financial frameworks aligning commercial ambition with operational reality.", deliverable: "Financial plan with cash-flow optimisation roadmap." },
-            { name: "Workforce Planning & Recruitment Strategy", desc: "Data-driven perspective on team building — talent valuation, market strategy, and multi-entity ownership pathway structuring.", deliverable: "Recruitment strategy report and transfer market analysis." },
-            { name: "Academy Development & Geostrategies", desc: "Comprehensive academy blueprints — facility planning, talent identification frameworks, and regional scouting strategies. Sustainable grassroots infrastructure for organisations and investors.", deliverable: "Academy development blueprint with geographic scouting strategy." }
-        ],
+            { name: "Revenue Development & Financial Management", desc: "Digital monetisation, premium offerings, partnership maximisation, and operational financial planning. Financial frameworks aligning commercial ambition with operational reality.", deliverable: "Financial plan with cash-flow optimisation roadmap." }
+           ],
         also: {
             title: "International Youth Events & Workshops",
-            desc: "We design and deliver international youth events — talent showcases, selection events, and skills programmes — alongside professional workshops for trainers, administrators, and executives.",
-            deliverable: "Event execution plan and workshop curriculum."
+            desc: "Beyond our core mandates, we design and deliver bespoke corporate events and professional development programmes — including executive workshops, industry roundtables, and tailored training sessions for leadership teams, managers, and key personnel. ",
+            deliverable: "A complete event execution plan and accompanying workshop curriculum."
         }
     },
     {
