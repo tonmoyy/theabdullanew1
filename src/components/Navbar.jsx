@@ -47,7 +47,7 @@ const Navbar = () => {
 
     const verticals = [
         { label: 'Private Equity', to: '/verticals/private-equity' },
-        { label: 'Advisory',       to: '/verticals/advisory'       },
+        { label: 'M&A Advisory',       to: '/verticals/advisory'       },
         { label: 'Family Office',  to: '/verticals/family-office'  },
         { label: 'Luxury Finance', to: '/verticals/luxury-finance' },
     ];

@@ -7,21 +7,25 @@ const cards = [
         icon: '',
         title: 'Private Equity',
         desc: 'Direct investments in private businesses with strong fundamentals and long‑term value creation potential.',
+        slug: 'private-equity',   // explicit slug
     },
     {
         icon: '',
         title: 'M&A Advisory',
         desc: 'Specialised M&A, transaction, and strategic advisory — with a dedicated focus on the global - industry.',
+        slug: 'advisory',         // maps to /verticals/advisory
     },
     {
         icon: '',
         title: 'Family Office',
         desc: 'Bespoke wealth structuring, preservation, and growth strategies for principals and ultra‑high‑net‑worth families.',
+        slug: 'family-office',
     },
     {
         icon: '',
         title: 'Luxury Finance',
         desc: 'Structured financing solutions for high‑value assets, collections, and lifestyle investments in the premium segment.',
+        slug: 'luxury-finance',
     },
 ];
 
@@ -58,58 +62,78 @@ const VerticalsSnapshot = () => (
 
         {/* Four cards – now using custom responsive grid */}
         <div className="vertical-cards-grid">
-            {cards.map((card, idx) => (
-                <div
-                    key={idx}
-                    style={{
-                        background: 'rgba(255,255,255,0.03)',
-                        borderTop: '3px solid var(--gold)',
-                        padding: '2.5rem 1.5rem',
-                        textAlign: 'center',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'flex-start',
-                    }}
-                >
-                    <div style={{ fontSize: '2rem', marginBottom: '0.8rem' }}>{card.icon}</div>
-                    <h3
+            {cards.map((card, idx) => {
+                // Use the explicit slug if present, otherwise generate from title
+                const slug = card.slug || card.title.toLowerCase().replace(/\s+/g, '-');
+                const linkTo = `/verticals/${slug}`;
+
+                return (
+                    <div
+                        key={idx}
                         style={{
-                            fontFamily: "'Cormorant Garamond', serif",
-                            color: 'var(--gold-light)',
-                            fontSize: '1.4rem',
-                            fontWeight: 400,
-                            marginBottom: '0.8rem',
+                            background: 'rgba(255,255,255,0.03)',
+                            borderTop: '3px solid var(--gold)',
+                            padding: '2.5rem 1.5rem',
+                            textAlign: 'center',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'flex-start',
                         }}
                     >
-                        {card.title}
-                    </h3>
-                    <p
-                        style={{
-                            fontSize: '0.8rem',
-                            color: 'rgba(255,255,255,0.6)',
-                            lineHeight: 1.7,
-                            marginBottom: '1.5rem',
-                            flex: 1,
-                        }}
-                    >
-                        {card.desc}
-                    </p>
-                    <Link
-                        to="/verticals"
-                        style={{
-                            fontSize: '0.65rem',
-                            letterSpacing: '0.15em',
-                            textTransform: 'uppercase',
-                            color: 'var(--gold)',
-                            fontWeight: 700,
-                            textDecoration: 'none',
-                            marginTop: 'auto',
-                        }}
-                    >
-                        Explore →
-                    </Link>
-                </div>
-            ))}
+                        <div style={{ fontSize: '2rem', marginBottom: '0.8rem' }}>{card.icon}</div>
+
+                        {/* Clickable title – redirects to the vertical detail page */}
+                        <Link
+                            to={linkTo}
+                            style={{
+                                textDecoration: 'none',
+                                color: 'inherit',
+                                display: 'block',
+                            }}
+                        >
+                            <h3
+                                style={{
+                                    fontFamily: "'Cormorant Garamond', serif",
+                                    color: 'var(--gold-light)',
+                                    fontSize: '1.4rem',
+                                    fontWeight: 400,
+                                    marginBottom: '0.8rem',
+                                }}
+                            >
+                                {card.title}
+                            </h3>
+                        </Link>
+
+                        <p
+                            style={{
+                                fontSize: '0.8rem',
+                                color: 'rgba(255,255,255,0.6)',
+                                lineHeight: 1.7,
+                                marginBottom: '1.5rem',
+                                flex: 1,
+                            }}
+                        >
+                            {card.desc}
+                        </p>
+
+                        {/* Explore link – now points to the correct vertical page */}
+                        <Link
+                            to={linkTo}
+                            style={{
+                                fontSize: '0.65rem',
+                                letterSpacing: '0.15em',
+                                textTransform: 'uppercase',
+                                color: 'var(--gold)',
+                                fontWeight: 700,
+                                textDecoration: 'none',
+                                marginTop: 'auto',
+                            }}
+                        >
+                            Explore →
+                        </Link>
+                    </div>
+                );
+            })}
         </div>
     </section>
 );

@@ -51,7 +51,6 @@ const Footer = () => {
                     <h5>The Firm</h5>
                     <ul className="footer-list-reset">
                         <li><Link to="/about">About</Link></li>
-                        <li><Link to="/leadership">Leadership</Link></li>
                         <li><Link to="/philosophy">Philosophy</Link></li>
                     </ul>
                 </div>
