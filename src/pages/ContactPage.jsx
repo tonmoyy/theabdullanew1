@@ -592,7 +592,7 @@ const ContactPage = () => {
                                 Response Commitment
                             </div>
                             <p style={{ fontSize: 12, color: '#5a6270', lineHeight: 1.7, margin: 0, fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
-                                All enquiries are acknowledged within <strong>two business days</strong>. Serious enquiries receive a response from a senior member of our team directly.
+                                All enquiries are acknowledged within <strong>Five business days</strong>. Serious enquiries receive a response from a senior member of our team directly.
                             </p>
                         </div>
                     </div>
